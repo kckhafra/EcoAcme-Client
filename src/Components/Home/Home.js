@@ -5,7 +5,11 @@ import './Home.css'
 export default class Home extends React.Component{
     renderLoggedIn(){
         return(
-            <div></div>
+            <div>
+                <div className="searchinput-container">
+                    <textarea className="home-writecomment" type="text" title="write_post" placeholder="Write Post"></textarea>
+                </div>
+            </div>
         )
     }
     renderLoggedOut(){
@@ -19,6 +23,15 @@ export default class Home extends React.Component{
                 </div>
                 <div className="signup">
                     <h2>Sign Up</h2>
+                    <div className="name-container">
+                        <input type="text" placeholder="First name"/>
+                        <input type="text" placeholder="Last name"/>
+                        <input type="text" placeholder="Email"/>
+                        <input type="text" placeholder="Profession"/>
+                        <input type="text" placeholder="User Name"/>
+                        <input type="text" placeholder="New Password"/>
+                        <button type="submit">Sign Up</button>
+                    </div>
                 </div>
             </div>
         )

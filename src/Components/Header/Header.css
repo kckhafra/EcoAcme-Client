@@ -11,8 +11,24 @@
 .log-search-container{
     display: flex;
 }
-
-.header-input{
+.username-container{
+    padding-right: 5px;
+}
+.password-container{
+    padding-right: 5px;
+}
+.label-password{
+    display: block;
+}
+.label-username{
+    display: block;
+}
+.header-login-button{
+    padding: 3px;
+    margin-left: 5px;
+    
+}
+.header-search{
     width: 244px;
     height: 30px;
 }

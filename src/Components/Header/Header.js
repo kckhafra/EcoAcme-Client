@@ -9,7 +9,7 @@ export default class Header extends React.Component{
             <div className="header-container">
                 <div className="log-search-container">
                     <div>img-logo</div>
-                    <input type="text" className="header-input"></input>
+                    <input type="text" className="header-search"></input>
                     <button className="header-search-button">Search</button>
                 </div>
                 <div className="nav-container">
@@ -40,12 +40,22 @@ export default class Header extends React.Component{
                         </main>
                     </Menu>
                 </div>
-                <div className="log-search-container">
-                        <div>img-logo</div>
-                        <input type="text" className="header-input"></input>
-                        <button className="header-search-button">Search</button>
+                <form>
+                    <div className="log-search-container">
+                        
+                            <div className="username-container">
+                                <label className="label-username">User Name</label>
+                                <input type="text" className="header-username"></input>
+                            </div>
+                            <div className="password-container">
+                                <label className="label-password">Password</label>
+                                <input type="text" className="header-password"></input>
+                                <button className="header-login-button">Log in</button>
+                            </div>  
                     </div>
-                    <div className="nav-container">
+                </form>
+                    
+                <div className="nav-container">
                         <Link className="header-links">Join</Link>
                         <Link className="header-links">Sign in</Link>
                         <Link 
@@ -61,7 +71,7 @@ export default class Header extends React.Component{
                         to="notifications"
                         className="header-links">Notifications</Link>
                         <Link className="header-links">User</Link>
-                    </div>
+                </div>
                    
             </div>
         )

@@ -5,6 +5,8 @@ import {Route} from 'react-router-dom';
 import FriendListPage from '../Friends/FriendListPage/FriendListPage';
 import MessageListPage from '../Messages/MessageListPage/MessageListPage'
 import NotificationListPage from '../Notifications/NotificationsListPage/NotificationsListPage'
+import Profile from '../Profile/Profile'
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,9 @@ function App() {
       <Route
       path={'/notifications'}
       component={NotificationListPage}/>
+      <Route
+      path={'/profile'}
+      component={Profile}/>
     </div>
   );
 }
