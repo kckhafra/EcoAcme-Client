@@ -1,0 +1,19 @@
+.start-info{
+    width: 50%;
+    margin-right: 15px;
+    padding: 5px;
+    
+}
+.signup{
+   width: 50%;
+   text-align: left;
+   padding: 5px;
+}
+.home-main-container{
+    display: flex;
+    justify-content: space-evenly;
+  }
+.start-container{
+    display: flex;
+    justify-content: space-between;
+}

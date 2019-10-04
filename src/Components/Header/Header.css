@@ -18,13 +18,20 @@
     padding-right: 5px;
 }
 .label-password{
+  padding-bottom: 2px;
     display: block;
 }
 .label-username{
+  padding-bottom: 2px;
     display: block;
 }
+.header-username{
+  height: 20px;
+}
+.header-password{
+  height: 20px;
+}
 .header-login-button{
-    padding: 3px;
     margin-left: 5px;
     
 }
@@ -40,10 +47,6 @@
     text-decoration: none;
     color: white;
     padding: 10px;
-}
-.home-container{
-    display: flex;
-    justify-content: space-between;
 }
 
 .nav-container{
@@ -119,4 +122,14 @@
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  @media(min-width:749px){
+    .nav-container{
+      display: flex;
+    }
+
+    .bm-burger-button {
+      display: none;
+    }
   }

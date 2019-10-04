@@ -1,6 +1,7 @@
 
 {
     "version": 2,
+    "alias": "kckhafra-ecoacme-app",
     "name": "ecoacme-app",
     "routes": [
         {

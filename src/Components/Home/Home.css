@@ -3,14 +3,21 @@
     width: 90%
 }
 
-.home-info{
-    width: 50%;
-    margin-right: 15px;
-    padding: 5px;
+
+.postpage-container{
+    border: red 1px solid;
+    width: 40%;
     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.signup{
-   width: 50%;
-   text-align: left;
-   padding: 5px;
+
+.home-main-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+.home-container{
+    display: flex;
+    justify-content: space-between;
 }

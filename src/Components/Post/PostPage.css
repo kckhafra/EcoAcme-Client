@@ -1,0 +1,9 @@
+.post-image{
+    height: 200px;
+}
+.post-container{
+    width: 100%;
+    min-height: 586px;
+    border: black solid 1px;
+    overflow: auto;
+}
