@@ -40,10 +40,10 @@ export default class Header extends React.Component{
                     >
                         <main id="page-wrap">
                             <a id="home" className="menu-item" href="/home">Home</a>
-                            <a id="friends" className="menu-item" href="/friends">Friends</a>
+                            <a id="friends" className="menu-item" href="/users">Network</a>
                             <a id="messages" className="menu-item" href="/messages">Messages</a>
-                            <a id="notifications" className="menu-item" href="/notifications">Notifications</a>
-                            <a id="profile" className="menu-item" href="/profile">Profile</a>
+                            {/* <a id="notifications" className="menu-item" href="/notifications">Notifications</a> */}
+                            <a id="myprofile" className="menu-item" href="/myprofile">My Profile</a>
                             <a id="logout" onClick={ this.handleLogoutButton } className="menu-item" href="/">Logout</a>
                         </main>
                     </Menu>
@@ -58,19 +58,19 @@ export default class Header extends React.Component{
                     to="/home"
                     className="header-links">Home</Link>
                     <Link 
-                    to="friends"
-                    className="header-links">Friends</Link>
+                    to="/users"
+                    className="header-links">Network</Link>
                     <Link 
-                    to="messages"
+                    to="/messages"
                     className="header-links">Messages</Link>
+                    {/* <Link 
+                    to="/notifications"
+                    className="header-links">Notifications</Link> */}
                     <Link 
-                    to="notifications"
-                    className="header-links">Notifications</Link>
+                    to="/myprofile"
+                    className="header-links">My Profile</Link>
                     <Link 
-                    to="profile"
-                    className="header-links">Profile</Link>
-                    <Link 
-                    id="logout" 
+                    id="/logout" 
                     onClick={ this.handleLogoutButton } 
                     className="header-links" 
                     to="/">Logout</Link>

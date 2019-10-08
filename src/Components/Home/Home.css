@@ -1,4 +1,8 @@
 .home-writecomment{
+    height: 100%;
+    width: 100%
+}
+.writecomment-form{
     height: 30px;
     width: 90%
 }
@@ -15,9 +19,30 @@
 
 .home-main-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 .home-container{
     display: flex;
     justify-content: space-between;
+}
+.userinfo-container{
+    width: 20%;
+}
+.display{
+    background: white;
+    position: absolute;
+    z-index: 1;
+    border: 1px solid black;
+    width: 41%;
+    height: 300px;
+    left: 352px;
+    
+}
+.share-post{
+    width: 100%;
+}
+.blue-bar{
+    background:blue;
+    width: 100%;
+    height: 10%;
 }

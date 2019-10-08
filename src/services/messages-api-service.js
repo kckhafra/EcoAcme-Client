@@ -27,6 +27,25 @@ const MessagesService = {
              : res.json()
         )
     },
+    postMessages(sender_id,receiver_id,messages,date_created){
+        return fetch(`${config.API_ENDPOINT}/messages`,{
+            method: 'Post',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                sender_id,
+                receiver_id,
+                messages,
+                date_created
+            })
+        })
+        .then(res =>
+            (!res.ok)
+              ? res.json().then(e => Promise.reject(e))
+              : res.json()
+          )
+    }
  }
 
  export default MessagesService

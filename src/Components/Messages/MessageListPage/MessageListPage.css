@@ -21,6 +21,7 @@
     height: 1500px;
 
 }
+
 .newmessage-button{
     position: relative;
     z-index: 1;
@@ -29,3 +30,10 @@
 .hidden{
     display: none;
 }
+.hidden-messages{
+    display: none
+}
+.display-messages{
+    display:initial;
+}
+

@@ -10,6 +10,10 @@ const EcoAcmeContext = React.createContext({
     userList:[],
     setUserList:()=>{},
     clearPost: ()=>{},
+    allUserMessages: [],
+    setAllUserMessages: ()=>{},
+    commentList: [],
+    setCommentList: ()=>{},
 })
 export default EcoAcmeContext;
 
@@ -18,7 +22,16 @@ export class EcoAcmeProvider extends React.Component{
         postList: [""],
         friendRequestList: [""],
         friendReceiverList: [""],
-        userList: [""]
+        userList: [""],
+        allUserMessages:[""],
+        commentList:[""],
+
+    }
+    setCommentList = (commentList)=>{
+        this.setState({commentList})
+    }
+    setAllUserMessages = allUserMessages=>{
+        this.setState({allUserMessages})
     }
     setPostList = postList=>{
         this.setState({postList})
@@ -46,7 +59,11 @@ export class EcoAcmeProvider extends React.Component{
             setPostList: this.setPostList,
             clearPost: this.clearPost,
             userList: this.state.userList,
-            setUserList: this.setUserList
+            setUserList: this.setUserList,
+            allUserMessages: this.state.allUserMessages,
+            setAllUserMessages: this.setAllUserMessages,
+            commentList: this.state.commentList,
+            setCommentList: this.setCommentList
         }
         return (
             <EcoAcmeContext.Provider value={value}>
