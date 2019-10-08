@@ -14,6 +14,7 @@ const EcoAcmeContext = React.createContext({
     setAllUserMessages: ()=>{},
     commentList: [],
     setCommentList: ()=>{},
+    alterPostList: ()=>{}
 })
 export default EcoAcmeContext;
 
@@ -35,6 +36,12 @@ export class EcoAcmeProvider extends React.Component{
     }
     setPostList = postList=>{
         this.setState({postList})
+    }
+    alterPostList = alterPost=>{
+        alert("working")
+        // const postList = [...this.state.postList,alterPost]
+        this.setState({postList: [...this.state.postList, ...alterPost]})
+        console.log(this.state.postList)
     }
     setFriendRequest = friendRequestList=>{
         this.setState({friendRequestList})
@@ -63,7 +70,8 @@ export class EcoAcmeProvider extends React.Component{
             allUserMessages: this.state.allUserMessages,
             setAllUserMessages: this.setAllUserMessages,
             commentList: this.state.commentList,
-            setCommentList: this.setCommentList
+            setCommentList: this.setCommentList,
+            alterPostList: this.alterPostList
         }
         return (
             <EcoAcmeContext.Provider value={value}>

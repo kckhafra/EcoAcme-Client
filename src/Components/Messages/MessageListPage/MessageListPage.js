@@ -8,6 +8,8 @@ import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service'
 import JwtService from '../../../services/jwt-api-service'
 import UserMessageInfo from '../UserMessageInfo/UserMessageInfo'
+import NewMessageForm from '../NewMessageForm/NewMessageForm'
+import ReplyMessage from '../ReplyMessage/ReplyMessageForm'
 
 
 const uuid = require('uuid')
@@ -18,7 +20,9 @@ export default class MessageListPage extends React.Component{
         allUserMessages: [""],
         messagesList: [""],
         newMessageForm: "hidden-messages",
-        displayMessages: "display-messages"
+        displayMessages: "display-messages",
+        idForClickedUser: "",
+        idForLatestUser: ""
 
     }
     componentDidMount(){
@@ -34,16 +38,18 @@ export default class MessageListPage extends React.Component{
                 return mess
             })
             .then(messages=>{
-                console.log(messages[0])
-                return(
+                return( 
+                messages.length<=0
+                ? null
+                : (
                     user_id===messages[0].sender_id
                     ? messages[0].receiver_id
                     : messages[0].sender_id
                     )
-            })
+            )})
             .then(id=>{
-                console.log(id)
-            MessageService.getMessagesConvo(user_id,id)
+                this.setState({idForLatestUser:id})
+                MessageService.getMessagesConvo(user_id,id)
             .then(messages=>{
                 console.log(messages)
                 this.setState({messagesList: messages})
@@ -61,7 +67,7 @@ export default class MessageListPage extends React.Component{
             const user_id = payload.user_id
             
             const messageReceiverId = e.target.message_user.value
-            console.log(messageReceiverId)
+            this.setState({idForClickedUser:messageReceiverId})
             MessageService.getMessagesConvo(user_id,messageReceiverId)
             .then(messages=>{
                 this.setState({messagesList: messages})
@@ -74,12 +80,29 @@ export default class MessageListPage extends React.Component{
                 displayedMessages: "hidden-messages"
             })
         }
+        
         handleCloseMessageForm = (e)=>{
             e.preventDefault()
             this.setState({
                 newMessageForm: "hidden-messages",
                 displayedMessages: "display-messages"
             })
+        }
+        handleReplyMessage = (e)=>{
+            
+            const token = TokenService.getAuthToken()
+            const payload = JwtService.verifyJwt(token)
+            const user_id = payload.user_id
+            const {idForClickedUser} = this.state
+            const {idForLatestUser} = this.state
+            const messages = e.target.reply_message.value
+            console.log(idForClickedUser)
+            console.log(idForLatestUser)
+            idForClickedUser===""
+            ? MessageService.postMessages(user_id,idForLatestUser,messages)
+            : MessageService.postMessages(user_id,idForClickedUser,messages)
+            
+
         }
 
         handleSubmitMessage = (e)=>{
@@ -88,7 +111,6 @@ export default class MessageListPage extends React.Component{
             const payload = JwtService.verifyJwt(token)
             const user_id = payload.user_id
             const messages = e.target.message.value
-            const date_created = "2019-10-06 11:58:19"
             const receiver_userName = e.target.receiver_username.value
             const filter_receiver = this.context.userList.filter(user=>{
                 return (
@@ -100,12 +122,16 @@ export default class MessageListPage extends React.Component{
             })
             const receiver_id = filter_receiver[0].id
             this.handleCloseMessageForm(e)
-            MessageService.postMessages(user_id,receiver_id,messages,date_created)
+            MessageService.postMessages(user_id,receiver_id,messages)
             window.location.reload()
         }
 
         
         render(){
+            const {idForClickedUser} = this.state
+            const {idForLatestUser} = this.state
+            console.log(idForClickedUser)
+            console.log(idForLatestUser)
         const allMessagesId = this.state.allUserMessages.map(messages=>{
             return messages.sender_id || messages.receiver_id
         })
@@ -135,23 +161,31 @@ export default class MessageListPage extends React.Component{
                         />
 
                     </div>
-                        <div  className={`${this.state.newMessageForm} message-form`} >
-                            <button onClick={this.handleCloseMessageForm}>Close</button>
-                            <form onSubmit={this.handleSubmitMessage}>
-                                <input name="receiver_username" type="text" placeholder="user name"></input>
-                                <textarea placeholder="Send a messsage" name="message"></textarea>
-                                <input type="submit"></input>
-                            </form>
+                    <div  className={`${this.state.newMessageForm} message-form`} >
+                        <NewMessageForm
+                        handleNewMessageForm={this.handleNewMessageForm}
+                        handleCloseMessageForm={this.handleCloseMessageForm}
+                        handleSubmitMessage = {this.handleSubmitMessage}
+                       
+                        />
                     </div>
                     <div className= {this.state.displayedMessages}>
                     
-                        {this.state.messagesList.map(message=>{
+                        {   this.state.messagesList <=0
+                            ? <p>no messages</p>
+                            : this.state.messagesList.map(message=>{
                         
                             return <MessagePage
                                 key={uuid}
                                 message={message}
                             />
+                            
                         })}
+                        <div>
+                            <ReplyMessage
+                            handleReplyMessage={this.handleReplyMessage}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,9 @@ export default class StarterPage extends React.Component{
     handleLoginSuccess = ()=>{
         this.props.history.push('/home')
     }
+    handleSignUp = (e)=>{
+        const {first_name,last_name,email,profession,user_name,new_password} = e.target
+    }
  
     renderHomeApp(){
      return(
@@ -20,13 +23,14 @@ export default class StarterPage extends React.Component{
              <div className="signup">
                  <h2>Sign Up</h2>
                  <div className="userinfo-container">
-                     <form>
-                        <input type="text" placeholder="First name"/>
-                        <input type="text" placeholder="Last name"/>
-                        <input type="text" placeholder="Email"/>
-                        <input type="text" placeholder="Profession"/>
-                        <input type="text" placeholder="User Name"/>
-                        <input type="text" placeholder="New Password"/>
+                     <form onSubmit={this.handleSignUp} >
+                        <input type="text" name="first_name" placeholder="First name"/>
+                        <input type="text" name="last_name" placeholder="Last name"/>
+                        <input type="text" name="email" placeholder="Email"/>
+                        <input type="text" name="profession" placeholder="Profession"/>
+                        <input type="text" name="profession_years" placeholder="Years of experience"/>
+                        <input type="text" name="user_name" placeholder="User Name"/>
+                        <input type="text" name="new_password" placeholder="New Password"/>
                         <button type="submit">Sign Up</button>
                      </form>
                  </div>

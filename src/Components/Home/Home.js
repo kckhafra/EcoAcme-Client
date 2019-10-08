@@ -6,6 +6,7 @@ import PostPage from '../Post/PostPage'
 import TokenService from '../../services/token-service'
 import JwtService from '../../services/jwt-api-service'
 import MessagesService from '../../services/messages-api-service'
+import PostService from '../../services/post-api-service';
 const uuid = require('uuid')
 
 export default class Home extends React.Component{
@@ -29,8 +30,26 @@ export default class Home extends React.Component{
        
         this.setState({textbox: 'hidden'})
     }
+    handlePostForm = (e)=>{
+        
+        const token = TokenService.getAuthToken()
+        const payload = JwtService.verifyJwt(token)
+        const user_id = payload.user_id
+        const post=e.target.write_post.value
+        const images = e.target.images.value = ""||null
+        ? null
+        : e.target.images.value
+        this.hideWritePost()
+        PostService.postPosts(user_id,post,images)
+        .then(p=>{console.log(p) 
+            return p})
+        
+        // .then(this.context.alterPostList)
+        
+    }
+    
     renderHome(){
-        console.log(this.context.allUserMessages)
+        
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
@@ -60,10 +79,15 @@ export default class Home extends React.Component{
                 })}
                     </div>
                     
-                    <div onClick={this.hideWritePost} className={this.state.textbox}>
+                    <div  className={this.state.textbox}>
                         <div className="blue-bar"></div>
-                        Write a Post
-                        <textarea className="home-writecomment" type="text" title="write_post" placeholder="Write Post"></textarea>
+                        <button onClick={this.hideWritePost}>Close</button>
+                        <form onSubmit={this.handlePostForm}>
+                            <textarea className="home-writecomment" type="text" title="write_post" name="write_post"placeholder="Write Post"></textarea>
+                            <input type="text" name="images" placeholder="Post with image"></input>
+                            <input type="submit"/>
+                            
+                        </form>
                     </div>
                     <div className="postpage-container">
                         <button className="share-post" onClick={this.displayWritePost} className="">

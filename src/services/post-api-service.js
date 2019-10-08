@@ -40,7 +40,7 @@ const PostService = {
          : res.json()
     )
 },
-   PostComment(postId,userId,comm){
+   postComment(postId,userId,comm){
     return fetch(`${config.API_ENDPOINT}/comments`,{
         method: 'POST',
         headers: {
@@ -58,6 +58,26 @@ const PostService = {
          : res.json()
     )
 },
+postPosts(userId,post,images){
+    return fetch(`${config.API_ENDPOINT}/post`,{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+            user_id: userId,
+            post: post,
+            images:images
+            
+        })
+    })
+    .then((res)=>
+        (!res.ok)
+         ? res.json().then(e=> Promise.reject(e))
+         : res.json()
+    )
+},
+
 }
 
 export default PostService

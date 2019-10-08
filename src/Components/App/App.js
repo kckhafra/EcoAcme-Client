@@ -9,7 +9,7 @@ import MyProfile from '../Profile/MyProfile/MyProfile'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext'
 import PostService from '../../services/post-api-service'
 import StarterPage from '../StarterPage/StarterPage'
-import NewMessageForm from '../NewMessageForm/NewMessageForm'
+import NewMessageForm from '../Messages/NewMessageForm/NewMessageForm'
 import UserService from '../../services/users-api-service'
 import UserPageList from '../User/UserPageList/UserPageList'
 import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
@@ -31,7 +31,7 @@ import MessagesService from '../../services/messages-api-service';
     
 
   render(){
-    console.log(this.context.postList)
+    
   return (
     <div className="App">
       

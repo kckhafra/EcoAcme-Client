@@ -27,7 +27,7 @@ const MessagesService = {
              : res.json()
         )
     },
-    postMessages(sender_id,receiver_id,messages,date_created){
+    postMessages(sender_id,receiver_id,messages){
         return fetch(`${config.API_ENDPOINT}/messages`,{
             method: 'Post',
             headers: {
@@ -37,7 +37,6 @@ const MessagesService = {
                 sender_id,
                 receiver_id,
                 messages,
-                date_created
             })
         })
         .then(res =>

@@ -21,9 +21,10 @@ export default class PostPage extends React.Component{
         const userId = payload.user_id
         const commValue= e.target.comment.value
         
-        PostService.PostComment(this.props.posts.id,userId,commValue)
+        PostService.postComment(this.props.posts.id,userId,commValue)
                     
     }
+    
     
     renderComment(){
         return(
