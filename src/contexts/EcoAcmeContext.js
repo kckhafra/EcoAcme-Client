@@ -39,7 +39,7 @@ export class EcoAcmeProvider extends React.Component{
     }
     alterPostList = alterPost=>{
         alert("working")
-        // const postList = [...this.state.postList,alterPost]
+        
         this.setState({postList: [...this.state.postList, ...alterPost]})
         console.log(this.state.postList)
     }

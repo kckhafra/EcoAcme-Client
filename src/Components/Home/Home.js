@@ -31,7 +31,7 @@ export default class Home extends React.Component{
         this.setState({textbox: 'hidden'})
     }
     handlePostForm = (e)=>{
-        
+        e.preventDefault()
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
@@ -44,7 +44,7 @@ export default class Home extends React.Component{
         .then(p=>{console.log(p) 
             return p})
         
-        // .then(this.context.alterPostList)
+        .then(this.context.alterPostList)
         
     }
     
