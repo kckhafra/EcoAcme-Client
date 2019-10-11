@@ -4,9 +4,10 @@ import './Home.css'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext'
 import PostPage from '../Post/PostPage'
 import TokenService from '../../services/token-service'
-import JwtService from '../../services/jwt-api-service'
+import JwtService from '../../services/jwt-service'
 import MessagesService from '../../services/messages-api-service'
 import PostService from '../../services/post-api-service';
+import UserBadge from '../UserBadge/UserBadge'
 const uuid = require('uuid')
 
 export default class Home extends React.Component{
@@ -53,7 +54,7 @@ export default class Home extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-         const userInfo = this.context.userList.filter(user=>{
+        const userInfo = this.context.userList.filter(user=>{
            return user.id == user_id
          })
     
@@ -64,17 +65,8 @@ export default class Home extends React.Component{
                     <div className="userinfo-container">
                     {userInfo.map(profile=>{
                     return (
-                    <div>
-                        <p>{profile.first_name}</p>
-                        <p>{profile.last_name}</p>
-                        <img src={profile.images}/>
-                        <p>{profile.email}</p>
-                        <p>{profile.profession}</p>
-                        <p>{profile.profession_years}</p>
-                        <p>{profile.college}</p>
-                        <p>{profile.degree}</p>
-                        <p>{profile.about_me}</p>
-                    </div>
+                    <UserBadge
+                    profile={profile}/>
                     )
                 })}
                     </div>
@@ -101,7 +93,6 @@ export default class Home extends React.Component{
                                         posts={post}
                                        
                                     />
-                            
                             )
                         })}
                     </div>

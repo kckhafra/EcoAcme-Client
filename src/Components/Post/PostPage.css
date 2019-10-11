@@ -1,9 +1,91 @@
 .post-image{
     height: 200px;
 }
-.post-container{
+.eachpost-container{
     width: 100%;
-    min-height: 586px;
-    border: black solid 1px;
+    
+    border: rgb(165, 156, 156) solid 1px;
     overflow: auto;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+.hidden-commentbox{
+    display: none;
+    
+}
+.hidden-deletecomment{
+    display: none;
+}
+.icon-box{
+    display: flex;
+    font-size: 2rem;
+    position: relative;
+    bottom: 0px;
+    
+}
+.post-icon-button{
+    display: flex;
+    font-size: 12px;
+    border: 0;
+}
+.comment-img{
+    height: 30px;
+    
+}
+
+.comment-button{
+    
+}
+.comment-text-icon{
+    
+    
+}
+.display-deletecomment{
+    display: initial;
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+}
+
+.hidden-commenttext{
+    display: none;
+}
+.comm-container{
+    display: flex;
+    padding: 10px 5px 5px 0px
+}
+.display-commenttext{
+   width: 100%;
+    background: #f3f6f8;
+    border-radius: 0 0 20px 20px;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-weight: 400;
+    color: rgba(0,0,0,.9);
+    padding: 0 16px 12px 12px;
+}
+.comment-info{
+    display: flex;
+}
+.comments-img{
+    height: 50px;
+    padding: 5px;
+}
+.comm-list{
+    list-style-type: none;
+}
+.comm-first-name{
+    font-weight: 600;
+}
+.comm-profession{
+    font-size: 12px;
+}
+.comm-delete-button{
+    display: block;
+    margin-left: 50px;
+}
+.hide-imgdelete{
+    display: none;
 }

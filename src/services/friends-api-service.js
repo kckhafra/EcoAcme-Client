@@ -1,4 +1,5 @@
 import config from '../config'
+import TokenService from '../services/token-service'
 
 const FriendsService = {
    getFriendsRequest(user_id){
@@ -6,6 +7,7 @@ const FriendsService = {
            method: 'GET',
            headers: {
                'content-type': 'application/json',
+               'authorization': `bearer ${TokenService.getAuthToken()}`
            },
        })
        .then((res)=>
@@ -19,6 +21,7 @@ const FriendsService = {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
+            'authorization': `bearer ${TokenService.getAuthToken()}`
         },
     })
     .then((res)=>

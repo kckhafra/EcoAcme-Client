@@ -20,7 +20,7 @@ export default EcoAcmeContext;
 
 export class EcoAcmeProvider extends React.Component{
     state = {
-        postList: [""],
+        postList: [],
         friendRequestList: [""],
         friendReceiverList: [""],
         userList: [""],
@@ -38,10 +38,7 @@ export class EcoAcmeProvider extends React.Component{
         this.setState({postList})
     }
     alterPostList = alterPost=>{
-        alert("working")
-        
-        this.setState({postList: [...this.state.postList, ...alterPost]})
-        console.log(this.state.postList)
+        this.setState({postList: [alterPost.post,...this.state.postList]})
     }
     setFriendRequest = friendRequestList=>{
         this.setState({friendRequestList})

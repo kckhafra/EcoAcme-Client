@@ -4,7 +4,7 @@ import UserPage from '../UserPage/UserPage'
 import {Link} from 'react-router-dom'
 import Header from '../../Header/Header'
 import './UserPageList.css'
-import JwtService from '../../../services/jwt-api-service';
+import JwtService from '../../../services/jwt-service';
 import TokenService from '../../../services/token-service';
 
 export default class UserPageList extends React.Component{

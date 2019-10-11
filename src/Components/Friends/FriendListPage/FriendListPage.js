@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../Header/Header'
 import './FriendListPage.css'
 import TokenService from '../../../services/token-service'
-import JwtService from '../../../services/jwt-api-service'
+import JwtService from '../../../services/jwt-service'
 import FriendsService from '../../../services/friends-api-service'
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext'
 import FriendPage from '../FriendPage/FriendPage'

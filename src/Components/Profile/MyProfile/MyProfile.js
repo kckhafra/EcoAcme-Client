@@ -3,7 +3,7 @@ import './MyProfile.css'
 import Header from '../../Header/Header'
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service';
-import JwtService from '../../../services/jwt-api-service';
+import JwtService from '../../../services/jwt-service';
 
 export default class MyProfile extends React.Component{
     static contextType = EcoAcmeContext

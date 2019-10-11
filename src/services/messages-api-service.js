@@ -1,4 +1,5 @@
 import config from '../config'
+import TokenService from '../services/token-service'
 
 const MessagesService = {
     getAllUserMessages(user_id){
@@ -6,6 +7,8 @@ const MessagesService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+                
             },
         })
         .then((res)=>
@@ -19,6 +22,7 @@ const MessagesService = {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
         .then((res)=>
@@ -32,6 +36,7 @@ const MessagesService = {
             method: 'Post',
             headers: {
                 'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify({
                 sender_id,

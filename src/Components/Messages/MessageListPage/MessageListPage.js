@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import MessagePage from '../MessagePage/MessagePage'
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service'
-import JwtService from '../../../services/jwt-api-service'
+import JwtService from '../../../services/jwt-service'
 import UserMessageInfo from '../UserMessageInfo/UserMessageInfo'
 import NewMessageForm from '../NewMessageForm/NewMessageForm'
 import ReplyMessage from '../ReplyMessage/ReplyMessageForm'
@@ -128,10 +128,6 @@ export default class MessageListPage extends React.Component{
 
         
         render(){
-            const {idForClickedUser} = this.state
-            const {idForLatestUser} = this.state
-            console.log(idForClickedUser)
-            console.log(idForLatestUser)
         const allMessagesId = this.state.allUserMessages.map(messages=>{
             return messages.sender_id || messages.receiver_id
         })
@@ -182,9 +178,11 @@ export default class MessageListPage extends React.Component{
                             
                         })}
                         <div>
-                            <ReplyMessage
+                            {this.state.allUserMessages.length<=0
+                            ? null
+                            : <ReplyMessage
                             handleReplyMessage={this.handleReplyMessage}
-                            />
+                            />}
                         </div>
                     </div>
                 </div>
