@@ -1,0 +1,52 @@
+.messagepage-username{
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    
+    align-items: center;
+}
+.messagepage-container-purple{
+   display: flex;
+   justify-content: flex-end;
+   margin-bottom: 20px; 
+}
+.mcp{
+    background-color: purple;
+    border-radius: 30px;
+    padding: 20px;
+    width: 300px;
+    color: white;
+    
+}
+
+.messagepage-container-gray{
+   display: flex;
+   justify-content: flex-start;
+   margin-bottom: 20px; 
+
+}
+
+.mcg{
+    display: flex;
+    flex-direction: column;
+   background-color: gray;
+   border-radius: 30px;
+   padding: 20px;
+   width: 300px;
+   align-items: space-around;
+   color: white;
+}
+.messagepage-username-profession{
+    display: flex;
+    flex-direction: column;
+    border: lightgray 1px solid;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    width: 100%;
+    min-height: 40px;
+    padding: 0px 10px 0px 10px;
+}
+.messagepage-profession{
+    font-size: 12px;
+}

@@ -3,9 +3,12 @@ import PostService from '../../services/post-api-service'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext';
 
 export default class DeleteComment extends React.Component{
+    
     static contextType = EcoAcmeContext
     handleDeleteComment = ()=>{
         PostService.deleteComment(this.props.comments.id)
+        .then(this.context.deleteComment(this.props.comments.id))
+        this.props.closeDeleteCommentConfirmation()
     }
     render(){
     

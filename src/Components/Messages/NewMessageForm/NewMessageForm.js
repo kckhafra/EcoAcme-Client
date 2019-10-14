@@ -1,13 +1,15 @@
 import React from 'react'
+import './NewMessageForm.css'
 
 export default class NewMessageForm extends React.Component{
     render(){
         return(
             <div  className="message-form" >
-                <button onClick={this.props.handleCloseMessageForm}>Close</button>
-                <form onSubmit={this.props.handleSubmitMessage}>
-                    <input name="receiver_username" type="text" placeholder="user name"></input>
-                    <textarea placeholder="Send a messsage" name="message"></textarea>
+                <form onSubmit={e=>this.props.handleSubmitMessage(e,e.target.message.value,e.target.receiver_username.value)}>
+                    <input className="message-username" name="receiver_username" type="text" placeholder="user name"></input>
+                    <textarea className="message-text" placeholder="Send a messsage" name="message"></textarea>
+                    <button className="message-button" onClick={this.props.handleCloseMessageForm}>Close</button>
+                    
                     <input type="submit"></input>
                 </form>
             </div>

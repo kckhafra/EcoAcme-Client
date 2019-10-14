@@ -1,0 +1,16 @@
+.profile-img{
+    width: 72px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.eachprofile-item{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow: auto;
+}
+
+.profile-eachuser-container{
+    width: 200px;
+}

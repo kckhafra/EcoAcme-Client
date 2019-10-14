@@ -8,17 +8,25 @@ import JwtService from '../../services/jwt-service'
 import MessagesService from '../../services/messages-api-service'
 import PostService from '../../services/post-api-service';
 import UserBadge from '../UserBadge/UserBadge'
+import ImagesForComponents from '../ImagesForComponents/ImagesForComponents';
+import PostForm from '../Post/PostForm/PostForm'
+import FriendsService from '../../services/friends-api-service'
 const uuid = require('uuid')
 
 export default class Home extends React.Component{
     state = {
-        textbox: "hidden"
+        textbox: "hidden",
+       
     }
     static contextType = EcoAcmeContext
     componentDidMount(){
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
+        FriendsService.getFriendsReceiver(user_id)
+        .then(this.context.setFriendReceiver)
+        FriendsService.getFriendsRequest(user_id)
+        .then(this.context.setFriendRequest)
         MessagesService.getAllUserMessages(user_id)
         .then(this.context.setAllUserMessages)
     }
@@ -42,12 +50,14 @@ export default class Home extends React.Component{
         : e.target.images.value
         this.hideWritePost()
         PostService.postPosts(user_id,post,images)
-        .then(p=>{console.log(p) 
-            return p})
-        
-        .then(this.context.alterPostList)
-        
+        .then(p=>{ 
+            PostService.getPostById(p.post.id)
+            
+            .then(this.context.addPostList)
+        })
     }
+    
+    
     
     renderHome(){
         
@@ -69,28 +79,29 @@ export default class Home extends React.Component{
                     profile={profile}/>
                     )
                 })}
-                    </div>
+                </div>
                     
                     <div  className={this.state.textbox}>
-                        <div className="blue-bar"></div>
-                        <button onClick={this.hideWritePost}>Close</button>
-                        <form onSubmit={this.handlePostForm}>
-                            <textarea className="home-writecomment" type="text" title="write_post" name="write_post"placeholder="Write Post"></textarea>
-                            <input type="text" name="images" placeholder="Post with image"></input>
-                            <input type="submit"/>
-                            
-                        </form>
+
+                        <PostForm
+                        hideWritePost={this.hideWritePost}
+                        handlePostForm={this.handlePostForm}
+                        />
                     </div>
                     <div className="postpage-container">
-                        <button className="share-post" onClick={this.displayWritePost} className="">
-                        Share a Post
-                        </button>
+                        
+                        <div className="share-post" onClick={this.displayWritePost} >
+                        <img className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
+                        </div>
+                        <div className="line"></div>
                         
                         {this.context.postList.map(post=>{
                             return(
                                     <PostPage
                                         key={uuid}
                                         posts={post}
+                                        displayEditTextBox={this.displayEditTextBox}
+                        hideEditTextBox={this.hideEditTextBox}
                                        
                                     />
                             )
@@ -107,6 +118,7 @@ export default class Home extends React.Component{
             <div>
                 <Header/>
                 {this.renderHome()}
+                
             </div>
         )
     }

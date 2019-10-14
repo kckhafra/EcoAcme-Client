@@ -1,4 +1,44 @@
 .userpage-container{
+    
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    
+}
+.user-middle-container{
+    background-color: white;
+    padding: 0px 25px 0px 40px;
+}
+.usermiddle-title{
+    margin: 16px 0px 16px 0px;
+    
+}
+.user-middle{
+    
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.user-sidebar{
+    background-color: white;
+    border: lightgray 1px solid;
+    width: 310px;
+    height: 280px;
+}
+.userpage-friends{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px 0px 15px;
+}
+.friend-image{
+    height: 30px;
+    margin-right: 10px;
+}
+.friendtext-andicon{
+    display: flex;
+    align-items: center;
+}
+.friend-number{
+    display: flex;
+    align-items: center;
 }

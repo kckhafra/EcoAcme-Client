@@ -1,0 +1,47 @@
+.friendpage-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.friendpage-friendcontainer{
+    display: flex;
+    align-items: center;
+}
+.friendpage-img{
+    width: 90px;
+    padding-right: 10px;
+}
+
+.gray-bar{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    background-color: lightgray;
+    margin: 20px 0px 20px 0px;
+    
+}
+.friendpage-message{
+    position: relative;
+    border: 1px solid purple;
+    padding: 5px;
+    font-weight: 600;
+    color: purple;
+    cursor: pointer;
+}
+.friendpage-name{
+    font-weight: 600;
+}
+.friendname-profession-college{
+    font-size: 14px;
+}
+.display-friendmessage{
+    position: absolute;
+    border: black 1px solid;
+    width: 400px;
+    height: 227px;
+    right: 30%;
+    z-index: 1;
+    background-color: white;
+}
+

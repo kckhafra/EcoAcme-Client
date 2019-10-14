@@ -2,6 +2,7 @@ import React from 'react';
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service';
 import JwtService from '../../../services/jwt-service';
+import './UserMessageInfo.css'
 
 export default class UserMessageInfo extends React.Component{
     static contextType = EcoAcmeContext
@@ -18,7 +19,7 @@ export default class UserMessageInfo extends React.Component{
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]
         console.log(uniqueMessage)
         return(
-            <div>
+            <div className="usermessage-container">
 
                 {uniqueMessage.map(user=>{
                     return (
@@ -29,10 +30,11 @@ export default class UserMessageInfo extends React.Component{
                             <form onSubmit={this.props.handleUserConvo}>
                             <input  value={user.id} 
                             name="message_user" className="hidden"></input>
-                            <button type="submit">
+                            <button className="usermessage-submitbutton" type="submit">
+                            <img className="user-message-img" src={user.images}/>
                                 {user.user_name}
                                 
-                                <img src={user.images}/>
+                                
                             </button>
                             </form>
                             

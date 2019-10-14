@@ -1,4 +1,5 @@
 import React from 'react'
+import './ReplyMessageForm.css'
 
 export default class NewMessageForm extends React.Component{
     render(){
@@ -6,7 +7,7 @@ export default class NewMessageForm extends React.Component{
             <div  className="message-form" >
                 
                 <form onSubmit={this.props.handleReplyMessage}>
-                    <textarea placeholder="Reply to Message" name="reply_message"></textarea>
+                    <textarea className="replymessage-text" placeholder="Reply to Message" name="reply_message"></textarea>
                     <input type="submit"></input>
                 </form>
             </div>

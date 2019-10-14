@@ -16,6 +16,20 @@ const PostService = {
             : res.json()
        )
    },
+   getPostById(postId){
+    return fetch(`${config.API_ENDPOINT}/post/${postId}`,{
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+    })
+    .then((res)=>
+        (!res.ok)
+         ? res.json().then(e=> Promise.reject(e))
+         : res.json()
+    )
+},
    postPosts(userId,post,images){
     return fetch(`${config.API_ENDPOINT}/post`,{
         method: 'POST',
@@ -35,6 +49,25 @@ const PostService = {
          ? res.json().then(e=> Promise.reject(e))
          : res.json()
     )
+},
+editPost(postId,editPost){
+    return fetch(`${config.API_ENDPOINT}/post/${postId}`,{
+        method: 'PATCH',
+        headers:{
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+        body: JSON.stringify(editPost)
+    })
+},
+deletePost(postId){
+    return fetch(`${config.API_ENDPOINT}/post/${postId}`,{
+        method: 'DELETE',
+        headers:{
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+        }
+    })
 },
     deleteComment(commId){
         return fetch(`${config.API_ENDPOINT}/comments/${commId}`,{
@@ -59,8 +92,8 @@ const PostService = {
          : res.json()
     )
 },
-   getCommentByPostId(postId){
-    return fetch(`${config.API_ENDPOINT}/comments/by_post/${postId}`,{
+   getCommentById(commentId){
+    return fetch(`${config.API_ENDPOINT}/comments/${commentId}`,{
         method: 'GET',
         headers: {
             'content-type': 'application/json',
@@ -73,6 +106,7 @@ const PostService = {
          : res.json()
     )
 },
+
    postComment(postId,userId,comm){
     return fetch(`${config.API_ENDPOINT}/comments`,{
         method: 'POST',
@@ -93,15 +127,7 @@ const PostService = {
     )
 },
     
-    deletePost(postId){
-        return fetch(`${config.API_ENDPOINT}/post/${postId}`,{
-            method: 'DELETE',
-            headers:{
-            'content-type': 'application/json',
-            'authorization': `bearer ${TokenService.getAuthToken()}`
-            }
-        })
-    },
+    
 }
 
 

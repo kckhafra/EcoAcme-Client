@@ -1,18 +1,29 @@
-.home-writecomment{
-    height: 100%;
-    width: 100%
-}
-.writecomment-form{
-    height: 30px;
-    width: 90%
+
+.share-post{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    border: lightgray 1px solid;
+    cursor: pointer;
+    background-color: white;
+    margin: 20px 0px 10px 0px;
+    padding: 16px;
 }
 
-
+.share-post:hover{
+    color: rgb(141, 6, 101);
+    text-decoration: underline;
+}
+.share-post-icon{
+    width: 30px;
+}
 .postpage-container{
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
+    
+    
 }
 
 .home-main-container{
@@ -24,12 +35,13 @@
     justify-content: space-between;
 }
 .userinfo-container{
+    margin-top: 20px;
     background: white;
-    max-width: 40%;
-    height: 800px;
+    max-width: 30%;
+    height: 350px;
     border: darkgray 1px solid;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 .profile-img{
     width:100%;
@@ -46,9 +58,4 @@
 }
 .share-post{
     width: 100%;
-}
-.blue-bar{
-    background:blue;
-    width: 100%;
-    height: 10%;
 }

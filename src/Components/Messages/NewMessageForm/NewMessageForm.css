@@ -1,2 +1,21 @@
+.message-form{
+    width: 100%;
+}
+.message-text{
+    width: 100%;
+    height: 200px;
+    border:1px solid lightgray;
+    border-left: none;
+    border-right: none;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.message-username{
+    height: 39px;
+    width: 100%;
+    border: none;
+    padding-left: 10px;
+    
+}
 
 

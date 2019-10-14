@@ -22,6 +22,7 @@ export default class FriendListPage extends React.Component{
 
     }
     
+    
     render(){
         const friendsList = this.context.friendReceiverList.concat(this.context.friendRequestList)
         console.log(friendsList)
@@ -30,18 +31,23 @@ export default class FriendListPage extends React.Component{
         return(
             <div>
                 <Header/>
-                <div className="searchinput-container">
+                <div className="searchfriend-container">
                     <input className="search-friends" type="text" title="search_friends" placeholder="Search Friends"></input>
                 </div>
-                <p>People you know</p>
+                
                 <div className="friendlist-container">
-                    {friendsList.map(friend=>{
-                        return <FriendPage
-                            key={uuid}
-                            friends={friend}
-                        />
-                    })
-                    }
+                    <div className="friend-contain">
+                        <p>People you know</p>
+                            {friendsList.map(friend=>{
+                                return <FriendPage
+                                    key={uuid}
+                                    friends={friend}
+                                    handleNewMessage={this.handleNewMessage}
+                                    history={this.props.history}
+                                />
+                            })
+                            }
+                    </div>
                 </div>
             </div>
         )

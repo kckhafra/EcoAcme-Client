@@ -30,6 +30,24 @@ const FriendsService = {
          : res.json()
     )
 },
+    postFriend(request_id,receiver_id){
+    return fetch(`${config.API_ENDPOINT}/friends`,{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
+        body: JSON.stringify({
+             friend_request_id: request_id,
+            friend_receiver_id: receiver_id
+        })
+    })
+    .then((res)=>
+        (!res.ok)
+         ? res.json().then(e=> Promise.reject(e))
+         : res.json()
+    )
+},
 }
 
 export default FriendsService

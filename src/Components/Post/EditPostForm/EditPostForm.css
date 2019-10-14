@@ -1,0 +1,26 @@
+
+
+.edit-form-container{
+    height: 100%;
+    border: 1px solid black;
+}
+
+ .edit-purple-bar{
+    background:rgb(141, 6, 101);
+    width: 100%;
+    height: 10%;
+} 
+.editpost-image-url{
+    width: 100%;
+}
+.edit-home-writecomment{
+    height: 95%;
+    width: 100%
+}
+.edit-writecomment-form{
+    height: 30px;
+    width: 90%
+}
+.edit-share-postform{
+    height: 70%;
+}
