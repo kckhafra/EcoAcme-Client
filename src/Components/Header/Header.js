@@ -49,7 +49,7 @@ export default class Header extends React.Component{
                     </Menu>
                 </div>
                 <div className="logoimg-container">
-                    <img  className="logo-img" src="https://gm1.ggpht.com/zJfYUp5xzxd5-_zLO4_NyrvYeqCmbXrCUaK0CFC7I77eZLCpgViMxSB_sVwn7ZVxu83RxndAghHPx42XzE1RsakMcxtj-Et0zbuikKqskp0qLmjnVAcr3lcLmxcAeZmGOrfHIWNb4oOXnbzXH3QANE_2b4-wzgbYcSU_4uoTwrgeYeoJr4sP55w_zHzbYikSHmyhPEFFvT0tCz67tPySFWy5RKAIm0YUkx903UmrUcthFEAtStVHNTTJ4xhli0Sp0r12dzvPnu8wMTKtmTPB5uCqXDPgY4r78cjpypYUCaTa2NzRsPLqiN85p6XRzdivCnBSLh7aFr2zR_hF3sX1tfZPB6veMcPBYcakgBRSgjVXQg55qV0GlcUihVWOK8yS3QEc6oDOAhJpAt5zPtM6Ib-fWK8d37g6QsF5GAhXDM8DHLyCeUu51weSisCZcK7qNCzXLo-MthD_faFxT_rqldooF7dLLsQzekj6afBr--vd13fpdzAeX8M-PCCtZOx-oORNaAxs1OQz3Nk_ZDpWZpRbPeap5HUsPp2qJDWt9W-DBBegn57Z4rT0qjIOKNmsWM7KLTJ63JSGH2_RVL9BqCTWkDOO3bZQyMVdGWKaSxT55kBd_GkcwNt0zTWbPgeAtwB3uhi7xwT9tcn-U49DDyEXp6tMKY7OBelhK5hWltbyhKfotnCYMgoCOXrvWJMpxA6hPovZnIWUmGCjUuwX8lJ5FbF9E75mvuo2VfsjLIVyeXhVtOv023PPFftm=s0-l75-ft-l75-ft"/>
+                    <h1>EcoAcme</h1>
                 </div>
                 <div className="log-search-container">
                     

@@ -11,9 +11,9 @@ export default class UserMessageInfo extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        const allMessagesId = this.props.allUserMessages.map(messages=>{
-            return messages.sender_id || messages.receiver_id
-        })
+        // const allMessagesId = this.props.allUserMessages.map(messages=>{
+        //     return messages.sender_id || messages.receiver_id
+        // })
         
         const {allUserMessages} = this.props
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]

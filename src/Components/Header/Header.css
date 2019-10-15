@@ -11,15 +11,14 @@
 .log-search-container{
     display: flex;
 }
-.logoimg-container{
+/* .logoimg-container{
   max-width: 70px;
   height: 30px;
   
-}
-.logo-img{
-  max-width: 100%;
-  height: 100%;
-}
+} */
+/* .logo-img{
+  max-width:
+} */
 .username-container{
     padding-right: 5px;
 }

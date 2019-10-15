@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../Header/Header'
 import './MessageListPage.css'
 import MessageService from '../../../services/messages-api-service'
-
 import MessagePage from '../MessagePage/MessagePage'
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service'
@@ -11,13 +10,7 @@ import UserMessageInfo from '../UserMessageInfo/UserMessageInfo'
 import NewMessageForm from '../NewMessageForm/NewMessageForm'
 import ReplyMessage from '../ReplyMessage/ReplyMessageForm'
 import ImagesForComponents from '../../ImagesForComponents/ImagesForComponents'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-  } from "react-router-dom"; 
+
 
 
 const uuid = require('uuid')
@@ -98,7 +91,7 @@ export default class MessageListPage extends React.Component{
             })
         }
         handleReplyMessage = (e)=>{
-            
+            e.preventDefault()
             const token = TokenService.getAuthToken()
             const payload = JwtService.verifyJwt(token)
             const user_id = payload.user_id
@@ -109,7 +102,7 @@ export default class MessageListPage extends React.Component{
             idForClickedUser===""
             ? MessageService.postMessages(user_id,idForLatestUser,messages)
             : MessageService.postMessages(user_id,idForClickedUser,messages)
-            
+            window.location.reload()
 
         }
 
@@ -124,29 +117,29 @@ export default class MessageListPage extends React.Component{
             console.log(receiver_id)
             this.handleCloseMessageForm(e)
             MessageService.postMessages(user_id,receiver_id,message)
-            
+            window.location.reload()
         }
 
         
         render(){
         const latestUser = this.context.userList.filter(user=>{
-            return user.id==this.state.idForLatestUser})
+            return user.id===this.state.idForLatestUser})
         const clickedUser = this.context.userList.filter(user=>{
-            return user.id==this.state.idForClickedUser
+            return user.id===this.state.idForClickedUser
         })
         const userForHeader = 
-        clickedUser.length ==0
+        clickedUser.length ===0
         ? latestUser
         : clickedUser
        
            
            
       
-        const allMessagesId = this.state.allUserMessages.map(messages=>{
-            return messages.sender_id || messages.receiver_id
-        })
+        // const allMessagesId = this.state.allUserMessages.map(messages=>{
+        //     return messages.sender_id || messages.receiver_id
+        // })
         
-        const uniqueMessageUserId = [...new Set(allMessagesId)]
+        
         
         
         return(
@@ -162,7 +155,7 @@ export default class MessageListPage extends React.Component{
                         <div className="messaging-container">
                             <div className="messaging">Messaging</div>
                             <div className="handle-newmessage" onClick={this.handleNewMessageForm}>
-                                <img className="messaging-icon" src={ImagesForComponents.editIcon}/>
+                                <img alt="message-icon" className="messaging-icon" src={ImagesForComponents.editIcon}/>
                             </div>
                             
                         </div>
@@ -190,7 +183,7 @@ export default class MessageListPage extends React.Component{
                     </div>
                     <div className="messageconvo-container">
                         
-                        {   this.state.messagesList.length <=0||this.state.messagesList==[]
+                        {   this.state.messagesList.length <=0||this.state.messagesList===[]
                             ? <p>You have no messages. Start a conversation by clicking the messaging icon on the top left of this box. When the message box pops up enter the user name of the person you would like to message.</p>
                             : this.state.messagesList.map(message=>{
                             return <MessagePage

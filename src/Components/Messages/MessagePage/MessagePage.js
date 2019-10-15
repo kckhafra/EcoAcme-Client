@@ -9,7 +9,7 @@ export default class MessagePage extends React.Component{
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         
-        return this.props.message.sender_id == user_id
+        return this.props.message.sender_id === user_id
         ?<div className="messagepage-container-purple">
             <div className="mcp">
                 <div>{this.props.message.user_name}</div>

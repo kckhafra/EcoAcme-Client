@@ -5,7 +5,7 @@ import './PostForm.css'
 export default class PostForm extends React.Component{
     render(){
         return(
-            <div class="post-form-container">
+            <div className="post-form-container">
                 <div className="blue-bar"></div>
                 <button onClick={this.props.hideWritePost}>Close</button>
                 <form className="share-postform" onSubmit={this.props.handlePostForm}>
