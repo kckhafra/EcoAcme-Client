@@ -16,10 +16,11 @@ export default class FriendListPage extends React.Component{
         const user_id = payload.user_id
         FriendsService.getFriendsReceiver(user_id)
         .then(this.context.setFriendReceiver)
+        // const friendsReceiver=this.context
+        // const friendRequest =
         FriendsService.getFriendsRequest(user_id)
         .then(this.context.setFriendRequest)
         
-
     }
     
     

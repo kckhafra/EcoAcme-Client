@@ -23,12 +23,20 @@ export default class Home extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        FriendsService.getFriendsReceiver(user_id)
-        .then(this.context.setFriendReceiver)
-        FriendsService.getFriendsRequest(user_id)
-        .then(this.context.setFriendRequest)
         MessagesService.getAllUserMessages(user_id)
         .then(this.context.setAllUserMessages)
+        // FriendsService.getAllFriends(user_id)
+        // .then(friend=>{
+        //      return [...new Map(friend.map(item => [item['user_name'], item])).values()]
+
+        // })
+        //.then(this.context.setAllFriends)
+        FriendsService.getFriendsReceiver(user_id)
+        .then(this.context.setFriendReceiver)
+       
+        FriendsService.getFriendsRequest(user_id)
+        .then(this.context.setFriendRequest)
+        
     }
     
     displayWritePost = ()=>{
@@ -114,6 +122,7 @@ export default class Home extends React.Component{
     }
     
     render(){
+        console.log(this.context.friendsList)
         return(
             <div>
                 <Header/>

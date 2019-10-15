@@ -25,8 +25,8 @@ export default EcoAcmeContext;
 export class EcoAcmeProvider extends React.Component{
     state = {
         postList: [],
-        friendRequestList: [""],
-        friendReceiverList: [""],
+        friendRequestList: [],
+        friendReceiverList: [],
         userList: [""],
         allUserMessages:[""],
         commentList:[""],

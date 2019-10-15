@@ -26,7 +26,7 @@ export default class MessageListPage extends React.Component{
     static contextType = EcoAcmeContext
     state = {
         allUserMessages: [""],
-        messagesList: [""],
+        messagesList: [],
         newMessageForm: "hidden-messages",
         displayMessages: "display-messages",
         idForClickedUser: "",
@@ -117,20 +117,18 @@ export default class MessageListPage extends React.Component{
         handleSubmitMessage = (e,message,receiver_userName)=>{
             e.preventDefault()
             console.log(message)
+            
             const token = TokenService.getAuthToken()
             const payload = JwtService.verifyJwt(token)
             const user_id = payload.user_id
-            
-            // const receiver_userName = e.target.receiver_username.value
             const filter_receiver = this.context.userList.filter(user=>{
-                return (
-                user.user_name ===receiver_userName
-                ? user
-                : null
+                return (user.user_name ===receiver_userName
+                // ? user
+                // : null
                 )
 
             })
-            console.log(receiver_userName)
+            console.log(filter_receiver)
             const receiver_id = filter_receiver[0].id
             this.handleCloseMessageForm(e)
             MessageService.postMessages(user_id,receiver_id,message)
@@ -200,8 +198,8 @@ export default class MessageListPage extends React.Component{
                     </div>
                     <div className="messageconvo-container">
                         {console.log(this.state.messagesList)}
-                        {   this.state.messagesList.length <=0
-                            ? <p>no messages</p>
+                        {   this.state.messagesList.length <=0||this.state.messagesList==[]
+                            ? <p>You have no messages. Start a conversation by clicking the messaging icon on the top left of this box. When the message box pops up enter the user name of the person you would like to message.</p>
                             : this.state.messagesList.map(message=>{
                             return <MessagePage
                                 key={uuid}

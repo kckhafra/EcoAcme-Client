@@ -4,22 +4,33 @@ import './UserPage.css'
 import FriendsService from '../../../services/friends-api-service'
 import TokenService from '../../../services/token-service';
 import JwtService from '../../../services/jwt-service';
+import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 
 
 
 
 export default class UserPage extends React.Component{
+    
+    static contextType = EcoAcmeContext
     handlePostFriends=(e)=>{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        FriendsService.postFriend(user_id,this.props.user.id)
+        const receiver_id = this.props.user.id
+        FriendsService.postFriend(user_id,receiver_id)
     }
     
     render(){
-        console.log(this.props.user)
+        const token = TokenService.getAuthToken()
+        const payload = JwtService.verifyJwt(token)
+        const user_id = payload.user_id
         const id = this.props.user.id
-        
+        const friendsList =this.context.friendReceiverList.concat(this.context.friendRequestList)
+        const friend = [...new Map(friendsList.map(item => [item['friend_request_id']||[item['friend_request_id']], item])).values()]
+        const t = friendsList.filter(fl=>{
+            return fl.friend_request_id!==user_id || fl.friend_request_id !==user_id
+        })
+        console.log(friend)
         return(
             <div className="users-container">
                 <div className="purple-box"></div>
@@ -32,7 +43,8 @@ export default class UserPage extends React.Component{
                 </Link>
                 
                 </div>
-                <button onClick={this.handlePostFriends}className="connect-button">Connect</button>
+                  <button onClick={this.handlePostFriends}className="connect-button">Connect</button>
+                
             </div>
         )
     }

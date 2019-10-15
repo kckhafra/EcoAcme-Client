@@ -13,7 +13,7 @@ import NewMessageForm from '../Messages/NewMessageForm/NewMessageForm'
 import UserService from '../../services/users-api-service'
 import UserPageList from '../User/UserPageList/UserPageList'
 import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
-import MessagesService from '../../services/messages-api-service';
+
 
  class App extends React.Component {
   static contextType = EcoAcmeContext
@@ -23,6 +23,7 @@ import MessagesService from '../../services/messages-api-service';
     .then(this.context.setPostList)
     UserService.getAllUsers()
     .then(this.context.setUserList)
+    
     
 
 }

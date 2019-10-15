@@ -7,15 +7,31 @@ import './UserPageList.css'
 import JwtService from '../../../services/jwt-service';
 import TokenService from '../../../services/token-service';
 import Image from '../../ImagesForComponents/ImagesForComponents'
+import FriendsService from '../../../services/friends-api-service'
 
 export default class UserPageList extends React.Component{
     static contextType = EcoAcmeContext
+
+    componentDidMount(){
+        const token = TokenService.getAuthToken()
+        const payload = JwtService.verifyJwt(token)
+        const user_id = payload.user_id
+        FriendsService.getFriendsReceiver(user_id)
+        .then(this.context.setFriendReceiver)
+       
+        FriendsService.getFriendsRequest(user_id)
+        .then(this.context.setFriendRequest)
+        
+    }
     render(){
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         const friendsList =this.context.friendReceiverList.concat(this.context.friendRequestList)
-        console.log(friendsList)
+        
+        
+        
+        // console.log(friendlist)
         return(
             <div>
                 <Header/>
@@ -27,8 +43,7 @@ export default class UserPageList extends React.Component{
                                 <p className="friendtext-andicon">
                                     <img className="friend-image" src={Image.friendIcon}/>
                                     <div>Friends</div> 
-                                </p>
-                                
+                                </p>  
                                 <p className="friend-number">{friendsList.length}</p>
                             </div>
                         </Link>
