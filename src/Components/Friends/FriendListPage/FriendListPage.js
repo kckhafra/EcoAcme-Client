@@ -26,7 +26,7 @@ export default class FriendListPage extends React.Component{
     
     render(){
         const friendsList = this.context.friendReceiverList.concat(this.context.friendRequestList)
-        console.log(friendsList)
+       
       
         
         return(

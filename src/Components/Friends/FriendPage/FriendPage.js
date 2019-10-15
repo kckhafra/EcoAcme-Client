@@ -21,7 +21,7 @@ export default class FriendPage extends React.Component{
         })
     }
     render(){
-        console.log(this.props)
+        
         return(
             <div className="friendpage-container">
                 <div className={this.state.friendMessage}>

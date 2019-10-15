@@ -109,7 +109,8 @@ export default class PostPage extends React.Component{
                     </div>
                 <div className="post-imgname-container">
                     {this.props.posts.images!==null
-                    ? <img className="post-image" src={this.props.posts.images}/>
+                    ? 
+                    <img className="postuser-image" src={this.props.posts.images}/>
                     : null}
                     <div className="name-profession-list">
                         <div className="post-name">{this.props.posts.first_name}    <span>{this.props.posts.last_name}</span>
@@ -123,6 +124,14 @@ export default class PostPage extends React.Component{
                     
                 </div>
                 <p>{this.props.posts.post}</p>
+                {this.props.posts.post_images==null
+                    ? null
+                    : 
+                    <div className="post-img-container">
+                        <img className="post-img" src={this.props.posts.post_images}/>
+                    </div>}
+                
+                
 
                 <div className="line-seperator"></div>
 

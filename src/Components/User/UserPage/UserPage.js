@@ -30,7 +30,7 @@ export default class UserPage extends React.Component{
         const t = friendsList.filter(fl=>{
             return fl.friend_request_id!==user_id || fl.friend_request_id !==user_id
         })
-        console.log(friend)
+        
         return(
             <div className="users-container">
                 <div className="purple-box"></div>

@@ -41,7 +41,7 @@ export default class MessageListPage extends React.Component{
         
             MessageService.getAllUserMessages(user_id)
             .then(mess=>{
-                console.log(mess)
+                
                 this.setState({allUserMessages: mess})
                 return mess
             })
@@ -59,7 +59,7 @@ export default class MessageListPage extends React.Component{
                 this.setState({idForLatestUser:id})
                 MessageService.getMessagesConvo(user_id,id)
             .then(messages=>{
-                console.log(messages)
+                
                 this.setState({messagesList: messages})
                 })  
             })
@@ -105,8 +105,7 @@ export default class MessageListPage extends React.Component{
             const {idForClickedUser} = this.state
             const {idForLatestUser} = this.state
             const messages = e.target.reply_message.value
-            console.log(idForClickedUser)
-            console.log(idForLatestUser)
+            
             idForClickedUser===""
             ? MessageService.postMessages(user_id,idForLatestUser,messages)
             : MessageService.postMessages(user_id,idForClickedUser,messages)
@@ -116,23 +115,16 @@ export default class MessageListPage extends React.Component{
 
         handleSubmitMessage = (e,message,receiver_userName)=>{
             e.preventDefault()
-            console.log(message)
-            
             const token = TokenService.getAuthToken()
             const payload = JwtService.verifyJwt(token)
             const user_id = payload.user_id
-            const filter_receiver = this.context.userList.filter(user=>{
-                return (user.user_name ===receiver_userName
-                // ? user
-                // : null
-                )
-
-            })
-            console.log(filter_receiver)
-            const receiver_id = filter_receiver[0].id
+            const receiver = this.context.userList.find(user => user.user_name === receiver_userName)
+            console.log(receiver)
+            const receiver_id = receiver.id
+            console.log(receiver_id)
             this.handleCloseMessageForm(e)
             MessageService.postMessages(user_id,receiver_id,message)
-            window.location.reload()
+            
         }
 
         
@@ -197,7 +189,7 @@ export default class MessageListPage extends React.Component{
                         </div>
                     </div>
                     <div className="messageconvo-container">
-                        {console.log(this.state.messagesList)}
+                        
                         {   this.state.messagesList.length <=0||this.state.messagesList==[]
                             ? <p>You have no messages. Start a conversation by clicking the messaging icon on the top left of this box. When the message box pops up enter the user name of the person you would like to message.</p>
                             : this.state.messagesList.map(message=>{

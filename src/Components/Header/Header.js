@@ -16,7 +16,7 @@ export default class Header extends React.Component{
 
     handleSubmitJwtAuth = (ev)=>{
         ev.preventDefault()
-        console.log(`username: ${ev.target.user_name.value} password: ${ev.target.password.value}`)
+        
         const {user_name, password} = ev.target
 
         AuthApiService.postLogin({

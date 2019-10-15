@@ -11,13 +11,11 @@ export default class Profile extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        console.log(this.context.userList)
+        
          const profileUser = this.context.userList.filter(user=>{
            return user.id == user_id
          })
-        console.log(profileUser.map(profile=>{
-            return profile.id
-        }) )
+        
         return(
             <div>
                 <Header/>

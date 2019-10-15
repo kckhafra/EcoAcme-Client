@@ -1,8 +1,21 @@
-.post-image{
+.postuser-image{
     height: 44px;
+}
+.post-img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    
+}
+.post-img-container{
+    display: flex;
+    justify-content: center;
+    width: 356px;
 }
 .post-imgname-container{
     display: flex;
+    
 
 }
 .name-profession-list{

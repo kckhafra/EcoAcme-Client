@@ -31,7 +31,7 @@ export default class UserPageList extends React.Component{
         
         
         
-        // console.log(friendlist)
+        
         return(
             <div>
                 <Header/>

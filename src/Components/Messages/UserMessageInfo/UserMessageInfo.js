@@ -14,10 +14,10 @@ export default class UserMessageInfo extends React.Component{
         const allMessagesId = this.props.allUserMessages.map(messages=>{
             return messages.sender_id || messages.receiver_id
         })
-        console.log(allMessagesId)
+        
         const {allUserMessages} = this.props
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]
-        console.log(uniqueMessage)
+       
         return(
             <div className="usermessage-container">
 

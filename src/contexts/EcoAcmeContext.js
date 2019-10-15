@@ -33,11 +33,11 @@ export class EcoAcmeProvider extends React.Component{
 
     }
     addPostList = addPost=>{
-        console.log(addPost)
+        
         this.setState({postList: [addPost.post,...this.state.postList]})
     }
     replacePostList = post=>{
-        console.log(post)
+        
         const updatePost=this.state.postList.map(obj => {
             return (
                 post.post.id===obj.id
@@ -46,13 +46,13 @@ export class EcoAcmeProvider extends React.Component{
             )
         });
         this.setState({postList: updatePost})
-        console.log(updatePost)
+        
     }
     addCommentList = addComment=>{
         this.setState({commentList:[addComment.comm,...this.state.commentList]})
     }
     deletePost = postId=>{
-        console.log(postId)
+       
         this.setState({postList: this.state.postList.filter(obj=>{
             return (
             obj.id ==postId
@@ -61,14 +61,14 @@ export class EcoAcmeProvider extends React.Component{
           })})
     }
     deleteComment= commentId=>{
-        console.log(commentId)
+        
         this.setState({commentList: this.state.commentList.filter(obj=>{
             return (
             obj.id ==commentId
             ? !obj
             :obj)
           })})
-          console.log(this.state.commentList)
+          
     }
     setCommentList = (commentList)=>{
         this.setState({commentList})
@@ -94,7 +94,7 @@ export class EcoAcmeProvider extends React.Component{
     }
 
     render(){
-        console.log(this.state.postList)
+       
         const value = {
             friendRequestList:this.state.friendRequestList,
             setFriendRequest: this.setFriendRequest,

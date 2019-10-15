@@ -48,6 +48,7 @@ export default class Home extends React.Component{
         this.setState({textbox: 'hidden'})
     }
     handlePostForm = (e)=>{
+        alert("hey")
         e.preventDefault()
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
@@ -122,7 +123,7 @@ export default class Home extends React.Component{
     }
     
     render(){
-        console.log(this.context.friendsList)
+        
         return(
             <div>
                 <Header/>
