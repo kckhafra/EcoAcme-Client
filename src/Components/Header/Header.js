@@ -40,7 +40,7 @@ export default class Header extends React.Component{
                     >
                         <main id="page-wrap">
                             <a id="home" className="menu-item" href="/home">Home</a>
-                            <a id="friends" className="menu-item" href="/users">Network</a>
+                            <a id="users" className="menu-item" href="/users">Network</a>
                             <a id="messages" className="menu-item" href="/messages">Messages</a>
                             {/* <a id="notifications" className="menu-item" href="/notifications">Notifications</a> */}
                             <a id="myprofile" className="menu-item" href="/myprofile">My Profile</a>

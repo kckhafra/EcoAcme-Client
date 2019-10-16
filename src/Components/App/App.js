@@ -22,7 +22,7 @@ import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
     PostService.getAllPost()
     .then(this.context.setPostList)
     UserService.getAllUsers()
-    .then(this.context.setUserList)
+        .then(this.context.setUserList)
     
     
 
@@ -32,7 +32,7 @@ import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
     
 
   render(){
-    
+    console.log(this.context.userList)
   return (
     <div className="App">
       

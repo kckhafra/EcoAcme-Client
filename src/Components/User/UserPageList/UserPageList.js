@@ -8,6 +8,7 @@ import JwtService from '../../../services/jwt-service';
 import TokenService from '../../../services/token-service';
 import Image from '../../ImagesForComponents/ImagesForComponents'
 import FriendsService from '../../../services/friends-api-service'
+import UserService from '../../../services/users-api-service';
 const uuid = require('uuid')
 export default class UserPageList extends React.Component{
     static contextType = EcoAcmeContext
@@ -22,12 +23,18 @@ export default class UserPageList extends React.Component{
         FriendsService.getFriendsRequest(user_id)
         .then(this.context.setFriendRequest)
         
+        
+        
     }
+    
     render(){
+        console.log(this.context.userList)
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         const friendsList =this.context.friendReceiverList.concat(this.context.friendRequestList)
+        const users = this.context.userList.filter(user=>user.id!==user_id)
+        console.log(users)
         
         
         
@@ -52,10 +59,10 @@ export default class UserPageList extends React.Component{
                     <div className="usermiddle-title">People You may know</div>
                         <div className="user-middle">
                         
-                            {this.context.userList.map(user=>{
-                                return user.id==user_id
-                                ? !user 
-                                : <UserPage key={uuid} user={user}/>
+                            {users.map(user=>{
+                                return(
+                                <UserPage key={uuid} user={user}/>
+                                )
                             })}
                         </div>
                     </div>
