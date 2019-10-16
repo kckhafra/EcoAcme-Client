@@ -4,9 +4,65 @@ import Header from '../../Header/Header'
 import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service';
 import JwtService from '../../../services/jwt-service';
+import ImagesForComponents from '../../ImagesForComponents/ImagesForComponents';
+import AboutMeForm from '../../AboutMeForm/AboutMeForm'
+import HolisticServicesForm from '../../HolisticServicesForm/HolisticServicesForm'
+import HolisticOrganizationForm from '../../HolisticOrganizationsForm/HolisticOrganizationsForm'
 const uuid = require('uuid')
 
 export default class MyProfile extends React.Component{
+    state={
+        aboutMeIcon: "aboutMeIcon",
+        aboutMeForm: "hidden",
+        servicesIcon: "aboutMeIcon",
+        servicesForm: "hidden",
+        organizationsIcon: "aboutMeIcon",
+        organizationsForm: "hidden"
+    }
+
+    displayAboutForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            aboutMeForm: "aboutMeForm",
+            aboutMeIcon: "hidden"
+        })
+    }
+    closeAboutForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            aboutMeForm: "hidden",
+            aboutMeIcon: "aboutMeIcon"
+        })
+    }
+    displayServicesForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            servicesForm: "aboutMeForm",
+            servicesIcon: "hidden"
+        })
+    }
+    closeServicesForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            servicesForm: "hidden",
+            servicesIcon: "aboutMeIcon"
+        })
+    }
+    displayOrganizationsForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            organizationsForm: "aboutMeForm",
+            organizationsIcon: "hidden"
+        })
+    }
+    closeOrganizationsForm = (e)=>{
+        e.preventDefault()
+        this.setState({
+            organizationsForm: "hidden",
+            organizationsIcon: "aboutMeIcon"
+        })
+    }
+
     static contextType = EcoAcmeContext
     render(){
         const token = TokenService.getAuthToken()
@@ -42,14 +98,51 @@ export default class MyProfile extends React.Component{
                                 </div>
                         </div>
                             <div className="profile-aboutme">
-                                <h2>About Me</h2>
-                                <p>{profile.about_me}</p>
+                                <div className={this.state.aboutMeForm}>
+                                    <AboutMeForm
+                                    closeAboutForm={this.closeAboutForm}/>
+                                </div>
+                                <div className={this.state.aboutMeIcon}>
+                                    <div>
+                                        <h2>About Me</h2>
+                                        <p>{profile.about_me}</p>
+                                    </div>
+                                    <div onClick={this.displayAboutForm}>
+                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                    </div>
+                                </div>
                             </div>
                         <div className="profile-services">
-                            <h2>Holistic Health Services Provided</h2>
+                            <div className={this.state.servicesForm}>
+                                    <HolisticServicesForm
+                                    closeServicesForm={this.closeServicesForm}/>
+                                </div>
+                                <div className={this.state.servicesIcon}>
+                                    <div>
+                                        <h2>Holistic Health Services Provided</h2>
+                                        <p>{profile.holistic_services}</p>
+                                    </div>
+                                    <div onClick={this.displayServicesForm}>
+                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                    </div>
+                                </div>
+                            
                         </div>
                         <div className="profile-organizations">
-                            <h2>Holistic Health Organizations Affiliations</h2>
+                        <div className={this.state.organizationsForm}>
+                                    <HolisticOrganizationForm
+                                    closeOrganizationsForm={this.closeOrganizationsForm}/>
+                                </div>
+                                <div className={this.state.organizationsIcon}>
+                                    <div>
+                                        <h2>Holistic Health Organizations Affiliations</h2>
+                                        <p>{profile.holistic_organizations}</p>
+                                    </div>
+                                    <div onClick={this.displayOrganizationsForm}>
+                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                    </div>
+                                </div>
+                            
                         </div>
                     </div>
                     )

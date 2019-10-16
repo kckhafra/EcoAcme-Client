@@ -44,9 +44,11 @@ export default class Profile extends React.Component{
                                 </div>
                             <div className="profile-services">
                                 <h2>Holistic Health Services Provided</h2>
+                                <p>{profile.holistic_services}</p>
                             </div>
                             <div className="profile-organizations">
                                 <h2>Holistic Health Organizations Affiliations</h2>
+                                <p>{profile.holistic_organizations}</p>
                             </div>
                         </div>
                         )

@@ -44,3 +44,14 @@
     padding: 30px;
     margin-bottom: 20px;
 }
+.aboutMeIcon{
+    display: flex;
+    justify-content: space-between;
+}
+.aboutMeForm{
+    width: 100%;
+    height: 200px;
+}
+.myprofile-editicon{
+    height: 40px;
+}
