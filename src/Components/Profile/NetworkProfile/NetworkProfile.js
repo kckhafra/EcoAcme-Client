@@ -23,7 +23,7 @@ export default class Profile extends React.Component{
                         <div key={uuid} className="profile-container">
                             <div className="graybar"></div>
                             <div className="profile-info-img">
-                                <img className="myprofile-img" src={profile.images}/>
+                                <img alt="profile image"className="myprofile-img" src={profile.images}/>
                                 <div className="profile-info">
                                     <div className="profile-name-email">
                                         <p className="profile-page-name">{profile.first_name}{" "}<span>{profile.last_name}</span></p>

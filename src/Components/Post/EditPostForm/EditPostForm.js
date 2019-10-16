@@ -9,14 +9,14 @@ export default class EditPostForm extends React.Component{
     static contextType = EcoAcmeContext
     state = {
         post: "",
-        images: ""
+        post_images: ""
     }
     componentDidMount(){
         PostService.getPostById(this.props.posts.id)
         .then(p=>{
                 this.setState({
                     post: p.post.post,
-                    images: p.post.images
+                    post_images: p.post.post_images
             })
         })
         
@@ -26,14 +26,14 @@ export default class EditPostForm extends React.Component{
     }
 
     handleChangeImages = (e)=>{
-        this.setState({images: e.target.value})
+        this.setState({post_images: e.target.value})
     }
 
     handleEditPost =(e) => {
         e.preventDefault()
         this.props.hideEditTextBox(e)
-        const {post,images}=this.state
-        const editPost = {post, images}
+        const {post,post_images}=this.state
+        const editPost = {post, post_images}
         
         PostService.editPost(this.props.posts.id, editPost)
         .then(()=>{
@@ -55,14 +55,16 @@ export default class EditPostForm extends React.Component{
     
     
     render(){
-        const {post,images} = this.state
+        const {post,post_images} = this.state
+        console.log(post_images)
+        console.log(post)
         return(
             <div className="edit-form-container">
                 <div className="edit-purple-bar"></div>
                 <button onClick={this.props.hideEditTextBox}>Close</button>
                 <form className="edit-share-postform" onSubmit={this.handleEditPost}>
                     <textarea onChange={this.handleChangePost}value={post} className="edit-home-writecomment" type="text" title="write_post" name="write_post"placeholder="Write Post"></textarea>
-                    <input onChange={this.handleChangeImage} value={images}className="editpost-image-url" type="text" name="images" placeholder="Post with image url"></input>
+                    <textarea onChange={this.handleChangeImages} value={post_images}className="editpost-image-url" type="text" name="images" placeholder="Post with image url"></textarea>
                     <button className="editshare-post-button"type="submit">Share</button>
                 </form>
             </div>

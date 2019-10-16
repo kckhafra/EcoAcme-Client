@@ -40,7 +40,7 @@ const PostService = {
         body: JSON.stringify({
             user_id: userId,
             post: post,
-            images:images
+            post_images:images
             
         })
     })

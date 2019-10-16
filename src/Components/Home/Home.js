@@ -48,7 +48,6 @@ export default class Home extends React.Component{
         this.setState({textbox: 'hidden'})
     }
     handlePostForm = (e)=>{
-        alert("hey")
         e.preventDefault()
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
@@ -80,11 +79,12 @@ export default class Home extends React.Component{
         return(
             <div>
                 
-                <div class="home-main-container">
+                <div className="home-main-container">
                     <div className="userinfo-container">
                     {userInfo.map(profile=>{
                     return (
                     <UserBadge
+                    key={uuid}
                     profile={profile}/>
                     )
                 })}

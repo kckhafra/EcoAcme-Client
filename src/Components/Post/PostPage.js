@@ -11,7 +11,7 @@ import Comment from '../Comment/Comment'
 import PostForm from '../Post/PostForm/PostForm'
 import EditPostForm from '../Post/EditPostForm/EditPostForm'
 import DeletePostConfirmation from './DeletePostConfirmation/DeletePostConfirmation'
-
+const uuid = require('uuid')
 export default class PostPage extends React.Component{
     static contextType = EcoAcmeContext
     
@@ -90,7 +90,7 @@ export default class PostPage extends React.Component{
     
 
     render(){
-        
+        console.log(this.props.posts)
         return(
             <div>
             <div className="eachpost-container">
@@ -108,7 +108,7 @@ export default class PostPage extends React.Component{
                         />
                     </div>
                 <div className="post-imgname-container">
-                    {this.props.posts.images!==null
+                    {this.props.posts.post_images!==null
                     ? 
                     <img className="postuser-image" src={this.props.posts.images}/>
                     : null}

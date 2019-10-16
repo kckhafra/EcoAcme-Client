@@ -42,14 +42,14 @@ export default class MyProfile extends React.Component{
                                 </div>
                         </div>
                             <div className="profile-aboutme">
-                                <h1>About Me</h1>
+                                <h2>About Me</h2>
                                 <p>{profile.about_me}</p>
                             </div>
                         <div className="profile-services">
-                            <h1>Holistic Health Services Provided</h1>
+                            <h2>Holistic Health Services Provided</h2>
                         </div>
                         <div className="profile-organizations">
-                            <h1>Holistic Health Organizations Affiliations</h1>
+                            <h2>Holistic Health Organizations Affiliations</h2>
                         </div>
                     </div>
                     )

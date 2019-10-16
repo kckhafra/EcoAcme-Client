@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext';
 import TokenService from '../../services/token-service';
 import JwtService from '../../services/jwt-api-service';
-
+const uuid = require('uuid')
 export default class Profile extends React.Component{
     static contextType = EcoAcmeContext
     render(){
@@ -21,7 +21,7 @@ export default class Profile extends React.Component{
                 <Header/>
                 {profileUser.map(profile=>{
                     return (
-                    <div>
+                    <div key={uuid}>
                         <p>{profile.first_name}</p>
                         <p>{profile.last_name}</p>
                         <img src={profile.images}/>

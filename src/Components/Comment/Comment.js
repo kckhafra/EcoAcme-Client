@@ -1,7 +1,7 @@
 import React from 'react'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext';
 import DeleteCommentBox from '../DeleteCommentBox/DeleteCommentBox'
-
+const uuid = require('uuid')
 export default class Comment extends React.Component{
     state={
         deleteCommentBox: "hidden-deletecomment",
@@ -52,7 +52,7 @@ export default class Comment extends React.Component{
                 {this.context.commentList.map(comm=>{
                     return comm.post_id==this.props.posts.id
                     ? 
-                    <div>
+                    <div key={uuid}>
                         <div className="comm-container">
                             <div className={this.state.hideImgDelete}>
                             <img className="comments-img comm-list"  src={comm.images}/>

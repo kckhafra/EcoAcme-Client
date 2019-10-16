@@ -3,6 +3,7 @@ import EcoAcmeContext from '../../../contexts/EcoAcmeContext';
 import TokenService from '../../../services/token-service';
 import JwtService from '../../../services/jwt-service';
 import './UserMessageInfo.css'
+const uuid = require('uuid')
 
 export default class UserMessageInfo extends React.Component{
     static contextType = EcoAcmeContext
@@ -26,7 +27,7 @@ export default class UserMessageInfo extends React.Component{
                             
                         user.id==user_id
                         ? !user
-                        : <div>
+                        : <div key={uuid}>
                             <form onSubmit={this.props.handleUserConvo}>
                             <input  value={user.id} 
                             name="message_user" className="hidden"></input>

@@ -8,7 +8,7 @@ import JwtService from '../../../services/jwt-service';
 import TokenService from '../../../services/token-service';
 import Image from '../../ImagesForComponents/ImagesForComponents'
 import FriendsService from '../../../services/friends-api-service'
-
+const uuid = require('uuid')
 export default class UserPageList extends React.Component{
     static contextType = EcoAcmeContext
 
@@ -55,7 +55,7 @@ export default class UserPageList extends React.Component{
                             {this.context.userList.map(user=>{
                                 return user.id==user_id
                                 ? !user 
-                                : <UserPage user={user}/>
+                                : <UserPage key={uuid} user={user}/>
                             })}
                         </div>
                     </div>

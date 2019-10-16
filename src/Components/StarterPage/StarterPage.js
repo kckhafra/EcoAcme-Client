@@ -20,7 +20,7 @@ export default class StarterPage extends React.Component{
                 user_name: e.target.user_name.value,
                 password: e.target.password.value,
                 images: e.target.images.value,
-                about_me: "null",
+                about_me: "Provide information about yourself as it pertains to Holistic Health. This is your chance to tell people about what you do in the holistic health field.",
                 college: e.target.college.value,
                 degree: e.target.degree.value
             })
