@@ -96,7 +96,7 @@ export default class Header extends React.Component{
                         </main>
                     </Menu>
                 </div>
-                <div>img-logo</div>
+                <h1>EcoAcme</h1>
                 <div>
                     <LoginForm
                     handleSubmitJwtAuth={this.handleSubmitJwtAuth}

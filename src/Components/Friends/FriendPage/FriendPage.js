@@ -45,6 +45,9 @@ export default class FriendPage extends React.Component{
                             <div>
                                 {this.props.friends.college}
                             </div>
+                            <div>
+                                {`User Name: ${this.props.friends.user_name}`}
+                            </div>
                         </div>
                     </div>
                     <div onClick={this.openNewMessage} className="friendpage-message">

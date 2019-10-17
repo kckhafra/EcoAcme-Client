@@ -31,6 +31,21 @@ const MessagesService = {
              : res.json()
         )
     },
+    getMessagesById(id){
+        return fetch(`${config.API_ENDPOINT}/messages/${id}`,{
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+        .then((res)=>
+            (!res.ok)
+             ? res.json().then(e=> Promise.reject(e))
+             : res.json()
+        )
+    },
+
     postMessages(sender_id,receiver_id,messages){
         return fetch(`${config.API_ENDPOINT}/messages`,{
             method: 'Post',

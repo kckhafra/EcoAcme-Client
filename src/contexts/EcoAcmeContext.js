@@ -19,7 +19,8 @@ const EcoAcmeContext = React.createContext({
     addComment: ()=>{},
     deleteComment: ()=>{},
     replacePostList: ()=>{},
-    clearUserList: ()=>{}
+    clearUserList: ()=>{},
+    // addMessageList: ()=>{}
 })
 export default EcoAcmeContext;
 
@@ -34,6 +35,7 @@ export class EcoAcmeProvider extends React.Component{
 
 
     }
+    
     addPostList = addPost=>{
         
         this.setState({postList: [addPost.post,...this.state.postList]})

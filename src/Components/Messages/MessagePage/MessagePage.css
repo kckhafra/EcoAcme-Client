@@ -13,7 +13,7 @@
 .mcp{
     background-color: purple;
     border-radius: 30px;
-    padding: 20px;
+    padding: 10px 10px 10px 30px;
     width: 300px;
     color: white;
     
@@ -31,7 +31,7 @@
     flex-direction: column;
    background-color: gray;
    border-radius: 30px;
-   padding: 20px;
+   padding: 10px 10px 10px 30px;
    width: 300px;
    align-items: space-around;
    color: white;

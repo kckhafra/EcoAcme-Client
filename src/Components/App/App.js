@@ -32,7 +32,6 @@ import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
     
 
   render(){
-    console.log(this.context.userList)
   return (
     <div className="App">
       
