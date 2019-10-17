@@ -40,10 +40,11 @@ export default class MessageListPage extends React.Component{
             this.setState({users: user})
         })
         
-            MessageService.getAllUserMessages(user_id)
+        MessageService.getAllUserMessages(user_id)
             .then(mess=>{
-                
+                console.log(mess)
                 this.setState({allUserMessages: mess})
+                
                 return mess
             })
             .then(messages=>{
@@ -57,6 +58,8 @@ export default class MessageListPage extends React.Component{
                     )
             )})
             .then(id=>{
+                const latestUserName = this.context.userList.find(u=>u.id===id)
+                console.log(latestUserName.user_name)
                 this.setState({idForLatestUser:id})
                 MessageService.getMessagesConvo(user_id,id)
             .then(messages=>{
@@ -143,14 +146,11 @@ export default class MessageListPage extends React.Component{
             const user_id = payload.user_id
             const receiver = this.context.userList.find(user => user.user_name === receiver_userName)
             const receiver_id = receiver.id
-            console.log(receiver.id)
             this.handleCloseMessageForm(e)
             MessageService.postMessages(user_id,receiver_id,message)
             .then(message=>{
-                console.log(message.id)
                 MessageService.getMessagesById(message.id)
                 .then(messages=>{
-                    console.log(messages)
                     this.setState({
                         allUserMessages: [messages,...this.state.allUserMessages]
                     })
