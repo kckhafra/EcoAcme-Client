@@ -1,0 +1,54 @@
+.loginpage-login{
+    background-color: rgb(39, 135, 180);
+    height: 100vh;
+}
+
+.link-tag-remove{
+    text-decoration: none;
+}
+
+.tag-remove:before {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    padding-top: 20px;
+    font-size: 30px;
+    content: 'x'; 
+    color: #fff;
+    font-weight: 300;
+    font-family: Arial, sans-serif;
+}
+
+.loginpage-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px 10px 10px;
+}
+.loginpage-username{
+    
+    margin-top: 20px;
+    background-color: white;
+    border-top: lightgray 1px solid;
+    border-left: lightgray 1px solid;
+    border-bottom: none;
+    padding: 10px;
+}
+.loginpage-password{
+    background-color: white;
+    border-top: lightgray 1px solid;
+    border-left: lightgray 1px solid;
+    border-bottom: lightgray 1px solid;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.loginpage-signin-button{
+    cursor: pointer;
+    border: 1.2px solid white;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 10px;
+    background-color: rgb(39, 135, 180);
+}
+    

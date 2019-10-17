@@ -24,7 +24,6 @@ export default class MessageListPage extends React.Component{
         displayMessages: "display-messages",
         idForClickedUser: "",
         idForLatestUser: "",
-        users: [],
         userProfession: "",
         userName: ""
         
@@ -34,11 +33,7 @@ export default class MessageListPage extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        UserService.getAllUsers()
-        .then(user=>{
-            console.log(user)
-            this.setState({users: user})
-        })
+        
         
         MessageService.getAllUserMessages(user_id)
             .then(mess=>{
@@ -58,8 +53,6 @@ export default class MessageListPage extends React.Component{
                     )
             )})
             .then(id=>{
-                const latestUserName = this.context.userList.find(u=>u.id===id)
-                console.log(latestUserName.user_name)
                 this.setState({idForLatestUser:id})
                 MessageService.getMessagesConvo(user_id,id)
             .then(messages=>{
@@ -73,6 +66,7 @@ export default class MessageListPage extends React.Component{
         
         handleUserConvo=(e)=>{
             e.preventDefault()
+            
             const token = TokenService.getAuthToken()
             const payload = JwtService.verifyJwt(token)
             const user_id = payload.user_id
@@ -81,8 +75,8 @@ export default class MessageListPage extends React.Component{
             this.handleCloseMessageForm(e)
             this.setState({
                 idForClickedUser:messageReceiverId,
+                userName: e.target.user_name.value,
                 userProfession: e.target.profession.value,
-                userName: e.target.user_name.value
 
             })
             MessageService.getMessagesConvo(user_id,messageReceiverId)
@@ -166,18 +160,13 @@ export default class MessageListPage extends React.Component{
             })
             
         }
+       
 
         
         render(){
-           
-        const clickedUser = this.state.users.filter(u=>{
-            return u.id===this.state.idForClickedUser})
-        const latestUser = this.state.users.filter(u=>{
+        const latestUser = this.context.userList.filter(u=>{
             return u.id===this.state.idForLatestUser})
-      
-        console.log(clickedUser)
-        
-        
+
         return(
     
             <div>
@@ -196,7 +185,8 @@ export default class MessageListPage extends React.Component{
                         </div>
                         <UserMessageInfo
                         allUserMessages = {this.state.allUserMessages}
-                        handleUserConvo={this.handleUserConvo}    
+                        handleUserConvo={this.handleUserConvo} 
+                        onChangeProf = {this.onChangeProf}   
                         />
 
                     </div>
@@ -211,7 +201,13 @@ export default class MessageListPage extends React.Component{
                     <div className= {this.state.displayMessages}>
                         <div className="messagepage-container">
                             <div className="messagepage-username-profession">
-                            <div className="messagepage-username">{this.state.userName}</div>
+                            <div className="messagepage-username">{
+                                this.state.userName!==""
+                                ?this.state.userName
+                                : (latestUser.map(l=>{
+                                    return l.user_name
+                                }))
+                                }</div>
                             <div className="messagepage-profession">{this.state.profession}</div>
                         </div>
                     </div>

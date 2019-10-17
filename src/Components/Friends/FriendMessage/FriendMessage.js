@@ -5,13 +5,15 @@ import MessagesService from '../../../services/messages-api-service';
 import {Link} from 'react-router-dom'
 
 export default class FriendMessage extends React.Component{
+    
     handleNewMessage=(e)=>{
+        e.preventDefault()
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        e.preventDefault()
         MessagesService.postMessages(user_id,this.props.friends.id,e.target.messages.value)
         this.props.history.push('/messages')
+         window.location.reload()
     }
     render(){
         return(

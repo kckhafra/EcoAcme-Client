@@ -44,7 +44,9 @@ export default class Header extends React.Component{
                             <a id="messages" className="menu-item" href="/messages">Messages</a>
                             {/* <a id="notifications" className="menu-item" href="/notifications">Notifications</a> */}
                             <a id="myprofile" className="menu-item" href="/myprofile">My Profile</a>
-                            <a id="logout" onClick={ this.handleLogoutButton } className="menu-item" href="/">Logout</a>
+                            
+                            <a id="logout"  className="menu-item" href="/">Logout</a>
+                            
                         </main>
                     </Menu>
                 </div>
@@ -84,20 +86,26 @@ export default class Header extends React.Component{
     renderHeaderLoggedOut(){
         return(
             <div className="header-container">
+                
+
                 <div id="outer-container">
                     <Menu 
-                    pageWrapId={ "page-wrap" }
+                    
                     outerContainerId={ "outer-container" }
                     >
                         <main id="page-wrap">
                             <a id="home-start" className="menu-item" href="/">Home</a>
-                            <a id="signup" className="menu-item" href="/">Sign Up</a>
-                            <a id="login" className="menu-item" href="/">Login</a>
+                            
+                            <a id="login" className="menu-item" href="/login">Login</a>
+                            
                         </main>
                     </Menu>
                 </div>
-                <h1>EcoAcme</h1>
-                <div>
+                <div className="title-container">
+                    <h1 className="ecoacme-title">EcoAcme</h1>
+                </div>
+                <div className="blank-space"></div>
+                <div className="header-login-component">
                     <LoginForm
                     handleSubmitJwtAuth={this.handleSubmitJwtAuth}
                     />

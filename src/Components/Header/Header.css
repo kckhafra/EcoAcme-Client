@@ -1,15 +1,34 @@
 .header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #283e4a;
-    height: 52px;
-    color: white;
-    overflow: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #283e4a;
+  background-size: cover;
+  height: 52px;
+  color: white;
+  overflow: auto;
+  
 }
-
+.blank-space{
+  display: none;
+}
+.ecoacme-title{
+  
+  font-size: 20px;
+  margin: 0px,30px,0px 30px;
+}
+/* .title-container{
+  position: relative;
+  right: 20px;
+  margin: 0px,30px,0px 30px;
+} */
 .log-search-container{
     display: flex;
+    
+}
+.header-login-component{
+  display: none;
 }
 /* .logoimg-container{
   max-width: 70px;
@@ -132,7 +151,19 @@
     background: rgba(0, 0, 0, 0.3);
   }
 
-  @media(min-width:820px){
+  @media(min-width:520px){
+    
+    .log-search-container{
+      display: flex;
+  }
+  .header-login-component{
+    display: initial;
+  }
+    
+  .username-container{
+    padding-right: 5px;
+}
+  
     .nav-container{
       display: flex;
     }
@@ -140,4 +171,19 @@
     .bm-burger-button {
       display: none;
     }
+    .bm-menu {
+      display: none;
+      
+      
+    }
+    
+    .header-container{
+      justify-content: space-between;
+    }
   }
+  @media(min-width: 250px){
+    .blank-space{
+      display: initial;
+    }
+  }
+  

@@ -20,12 +20,13 @@ export default class UserMessageInfo extends React.Component{
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]
        console.log(uniqueMessage)
        const messageWithoutLoggedIn = uniqueMessage.filter(mess=>mess.id!==user_id)
-       console.log(messageWithoutLoggedIn)
+       
        
         return(
             <div className="usermessage-container">
 
                 {messageWithoutLoggedIn.map(user=>{
+                   
                     return (   
                          <div key={uuid}>
                             <form onSubmit={this.props.handleUserConvo}>

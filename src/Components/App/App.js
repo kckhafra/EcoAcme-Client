@@ -13,7 +13,7 @@ import NewMessageForm from '../Messages/NewMessageForm/NewMessageForm'
 import UserService from '../../services/users-api-service'
 import UserPageList from '../User/UserPageList/UserPageList'
 import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
-
+import LoginPage from '../Login/LoginPage/LoginPage'
 
  class App extends React.Component {
   static contextType = EcoAcmeContext
@@ -34,8 +34,6 @@ import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
   render(){
   return (
     <div className="App">
-      
-
       <Route
       exact
       path={'/'}
@@ -68,6 +66,9 @@ import NetworkProfile from '../Profile/NetworkProfile/NetworkProfile'
       path={'/new_message'}
       component={NewMessageForm}
       />
+      <Route 
+      path={'/login'}
+      component={LoginPage}/>
     </div>
   )};
 }

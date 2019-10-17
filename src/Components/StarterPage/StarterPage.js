@@ -3,7 +3,9 @@ import Header from '../Header/Header'
 import './StarterPage.css'
 import UserService from '../../services/users-api-service';
 
+
 export default class StarterPage extends React.Component{
+   
 
     handleLoginSuccess = ()=>{
         this.props.history.push('/home')
@@ -23,38 +25,50 @@ export default class StarterPage extends React.Component{
                 college: e.target.college.value,
                 degree: e.target.degree.value
             })
-            
-            
+    }
+    onLoginClick = (e)=>{
+        e.preventDefault()
+        this.setState({
+            loginForm: "loginForm",
+            signupForm: "hidden"
+        })
     }
  
     renderHomeApp(){
      return(
-         <div className="start-container">
-             <div className="start-info">
-                 <h2>Welcome to your holistic lifestyle.</h2>
-                 <p>Follow other peoples workout regiments</p>
-                 <p>Share holistic remedies</p>
-                 <p>share health blogs</p>
-             </div>
-             <div className="signup">
-                 <h2>Sign Up</h2>
-                 <div className="signup-container">
-                     <form onSubmit={this.handleSignUp} >
-                        <input type="text" name="first_name" placeholder="First name"></input>
-                        <input type="text" name="last_name" placeholder="Last name"/>
-                        <input type="text" name="email" placeholder="Email"/>
-                        <input type="text" name="profession" placeholder="Profession"/>
-                        <input type="text" name="profession_years" placeholder="Years of experience"/>
-                        <input type="text" name="user_name" placeholder="User Name"/>
-                        <input type="text" name="password" placeholder="New Password"/>
-                        <input type="text" name="images" placeholder="Image url"/>
-                        <input type="text" name="college" placeholder="College"/>
-                        <input type="text" name="degree" placeholder="Degree"/>
+         
+             
+        <div className="start-container">
+            <div className="start-info">
+                <h2>Welcome to your holistic lifestyle.</h2>
+                <p>Follow other peoples workout regiments</p>
+                <p>Share holistic remedies</p>
+                <p>share health blogs</p>
+            </div>
+            
+            <div className="signup">
+                <div className="signup-container">
+                    <form onSubmit={this.handleSignUp} >
+                        <div>
+                            <h2>Sign Up</h2>
+                            <input className="signup-input" type="text" name="first_name" placeholder="First name"></input>
+                            <input className="signup-input" type="text" name="last_name" placeholder="Last name"/>
+                            <input className="signup-input" type="text" name="email" placeholder="Email"/>
+                            <input className="signup-input" type="text" name="profession" placeholder="Profession"/>
+                            <input className="signup-input" type="text" name="profession_years" placeholder="Years of experience"/>
+                            <input className="signup-input" type="text" name="user_name" placeholder="User Name"/>
+                            <input className="signup-input" type="text" name="password" placeholder="New Password"/>
+                            <input className="signup-input" type="text" name="images" placeholder="Image url"/>
+                            <input className="signup-input" type="text" name="college" placeholder="College"/>
+                            <input className="signup-input" type="text" name="degree" placeholder="Degree"/>
+                        </div>
                         <button type="submit">Sign Up</button>
-                     </form>
-                 </div>
-             </div>
+                        
+                    </form>
+                </div>
+            </div>
          </div>
+        
      )
  }
     render(){
@@ -62,6 +76,7 @@ export default class StarterPage extends React.Component{
             <div>
                 <Header
         onLoginSuccess={this.handleLoginSuccess}
+        onLoginClick={this.onLoginClick}
                 />
                 {this.renderHomeApp()}
             </div>

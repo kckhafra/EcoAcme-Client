@@ -27,7 +27,6 @@ export default class FriendPage extends React.Component{
                 <div className={this.state.friendMessage}>
                     <FriendMessage
                     closeNewMessage={this.closeNewMessage}
-                    handleNewMessage={this.handleNewMessage}
                     friends={this.props.friends}
                     history={this.props.history}
                     />
