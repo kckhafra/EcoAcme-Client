@@ -32,9 +32,9 @@ export default class FriendListPage extends React.Component{
         return(
             <div>
                 <Header/>
-                <div className="searchfriend-container">
+                {/* <div className="searchfriend-container">
                     <input className="search-friends" type="text" title="search_friends" placeholder="Search Friends"></input>
-                </div>
+                </div> */}
                 
                 <div className="friendlist-container">
                     <div className="friend-contain">

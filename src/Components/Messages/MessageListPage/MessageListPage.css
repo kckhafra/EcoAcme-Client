@@ -75,3 +75,27 @@
     width: 100%
 }
 
+@media(max-width: 890px){
+    .messageconvo-container{
+        
+        padding: 10px 10px 10px 10px;
+    }
+    .messagelist-container{
+        margin: 0px; 
+        
+    
+    }
+}
+@media(max-width: 466px){
+    .messaging-icon{
+        display: flex;
+        justify-content: center;
+        height: 20px;
+    }
+    .messaging{
+        display: none;
+        font-size: 12px;
+    }
+    
+}
+

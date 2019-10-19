@@ -104,7 +104,7 @@ export default class MyProfile extends React.Component{
                                 </div>
                                 <div className={this.state.aboutMeIcon}>
                                     <div>
-                                        <h2>About Me</h2>
+                                        <h2 className="myprofile-title">About Me</h2>
                                         <p>{profile.about_me}</p>
                                     </div>
                                     <div onClick={this.displayAboutForm}>
@@ -119,7 +119,7 @@ export default class MyProfile extends React.Component{
                                 </div>
                                 <div className={this.state.servicesIcon}>
                                     <div>
-                                        <h2>Holistic Health Services Provided</h2>
+                                        <h2 className="myprofile-title">Holistic Health Services Provided</h2>
                                         <p>{profile.holistic_services}</p>
                                     </div>
                                     <div onClick={this.displayServicesForm}>
@@ -135,7 +135,7 @@ export default class MyProfile extends React.Component{
                                 </div>
                                 <div className={this.state.organizationsIcon}>
                                     <div>
-                                        <h2>Holistic Health Organizations Affiliations</h2>
+                                        <h2 className="myprofile-title">Holistic Health Organizations Affiliations</h2>
                                         <p>{profile.holistic_organizations}</p>
                                     </div>
                                     <div onClick={this.displayOrganizationsForm}>

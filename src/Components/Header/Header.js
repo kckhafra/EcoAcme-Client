@@ -8,6 +8,9 @@ import LoginForm from '../Login/LoginForm/LoginForm';
 
 
 export default class Header extends React.Component{
+    state={
+        error: ""
+    }
 
     handleLogoutButton = ()=>{
         TokenService.clearAuthToken()
@@ -28,9 +31,16 @@ export default class Header extends React.Component{
             TokenService.saveAuthToken(res.authToken)
             this.props.onLoginSuccess()
         })
+        .catch(error=>{
+            console.log(error)
+            this.setState({
+                error: error.error
+            })
+        })
     }
 
     renderHeaderLoggedIn(){
+        
         return(
             <div className="header-container">
                   <div id="outer-container">
@@ -110,11 +120,14 @@ export default class Header extends React.Component{
         )
     }
     render(){
+        console.log(this.state.error)
         return(
             <div>
+                
                 {TokenService.hasAuthToken()
                  ? this.renderHeaderLoggedIn()
                  : this.renderHeaderLoggedOut()}
+                 {this.state.error&&<div className="error">{this.state.error}</div>}
             </div>
         )
     }

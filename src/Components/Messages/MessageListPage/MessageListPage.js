@@ -171,9 +171,9 @@ export default class MessageListPage extends React.Component{
     
             <div>
                 <Header/>
-                <div className="searchmessage-container">
+                {/* <div className="searchmessage-container">
                     <input className="search-message" type="text" title="search_message" placeholder="search messages"></input>
-                </div>
+                </div> */}
                 <div className="messagelist-container">
                     
                     <div className="usermessageinfo-container">

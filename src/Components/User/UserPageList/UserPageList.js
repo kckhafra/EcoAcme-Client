@@ -26,6 +26,12 @@ export default class UserPageList extends React.Component{
         
         
     }
+    handleSearchMessage =(e)=>{
+        e.preventDefault()
+        const search_term = e.target.search_users.value
+        UserService.searchUsers(search_term)
+        .then(this.context.setUserList)
+    }
     
     render(){
         console.log(this.context.userList)
@@ -42,7 +48,13 @@ export default class UserPageList extends React.Component{
         return(
             <div>
                 <Header/>
+                <div>
+                    <form onSubmit={this.handleSearchMessage} className="searchmessage-container">
+                        <input className="search-message" type="text" title="search_users" name="search_users"  placeholder="Search users"></input>
+                        <button className="usersearch-button">Search</button>
+                    </form> 
                 <div className="userpage-container">
+                     
                     <div className="user-sidebar">
                         <Link
                             to="/friends">
@@ -68,6 +80,7 @@ export default class UserPageList extends React.Component{
                     </div>
                     <div className="user-left"></div>
                 </div>
+            </div>
             </div>
         )
     }

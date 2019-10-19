@@ -5,6 +5,9 @@ import UserService from '../../services/users-api-service';
 
 
 export default class StarterPage extends React.Component{
+    state = {
+        error: ""
+    }
    
 
     handleLoginSuccess = ()=>{
@@ -25,6 +28,11 @@ export default class StarterPage extends React.Component{
                 college: e.target.college.value,
                 degree: e.target.degree.value
             })
+        .catch(error=>{
+            this.setState({
+                error: error.error
+            })
+        })
     }
     onLoginClick = (e)=>{
         e.preventDefault()
@@ -50,6 +58,7 @@ export default class StarterPage extends React.Component{
                 <div className="signup-container">
                     <form onSubmit={this.handleSignUp} >
                         <div>
+                            <div className="error">{this.state.error}</div>
                             <h2>Sign Up</h2>
                             <input className="signup-input" type="text" name="first_name" placeholder="First name"></input>
                             <input className="signup-input" type="text" name="last_name" placeholder="Last name"/>

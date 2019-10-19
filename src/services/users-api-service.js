@@ -13,6 +13,19 @@ const UserService = {
                  : res.json()
             )
         },
+    searchUsers(search_term){
+            return fetch(`${config.API_ENDPOINT}/users?search_term=${search_term}`,{
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json',
+                },
+            })
+            .then((res)=>
+                (!res.ok)
+                 ? res.json().then(e=> Promise.reject(e))
+                 : res.json()
+            )
+        },
     getUserById(id){
         return fetch(`${config.API_ENDPOINT}/users/${id}`,{
             headers: {

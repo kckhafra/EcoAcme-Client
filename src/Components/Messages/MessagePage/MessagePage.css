@@ -8,14 +8,16 @@
 .messagepage-container-purple{
    display: flex;
    justify-content: flex-end;
-   margin-bottom: 20px; 
+   margin-bottom: 20px;
+   overflow: auto; 
 }
 .mcp{
     background-color: purple;
     border-radius: 30px;
-    padding: 10px 10px 10px 30px;
+    padding: 10px 10px 10px 20px;
     width: 300px;
     color: white;
+    overflow: auto;
     
 }
 
@@ -23,6 +25,7 @@
    display: flex;
    justify-content: flex-start;
    margin-bottom: 20px; 
+   overflow: auto;
 
 }
 
@@ -31,10 +34,11 @@
     flex-direction: column;
    background-color: gray;
    border-radius: 30px;
-   padding: 10px 10px 10px 30px;
+   padding: 10px 10px 10px 20px;
    width: 300px;
    align-items: space-around;
    color: white;
+   overflow: auto;
 }
 .messagepage-username-profession{
     display: flex;
@@ -46,7 +50,78 @@
     width: 100%;
     min-height: 40px;
     padding: 0px 10px 0px 10px;
+    overflow: auto;
 }
 .messagepage-profession{
     font-size: 12px;
 }
+@media(max-width: 890px){
+
+    .mcg{
+        display: flex;
+        flex-direction: column;
+       background-color: gray;
+       border-radius: 30px;
+       padding: 10px 10px 10px 20px;
+       width: 250px;
+       align-items: space-around;
+       color: white;
+    }
+    
+    .mcp{
+    background-color: purple;
+    border-radius: 30px;
+    padding: 10px 10px 10px 20px;
+    width: 250px;
+    color: white;
+    
+    }
+    @media(max-width: 600px){
+        .mcg{
+            display: flex;
+            flex-direction: column;
+           background-color: gray;
+           border-radius: 30px;
+           padding: 10px 5px 10px 20px;
+           
+           align-items: space-around;
+           color: white;
+           
+        }
+        
+        .mcp{
+        
+        background-color: purple;
+        border-radius: 30px;
+        padding: 10px 5px 10px 20px;
+        
+        color: white;
+        
+        }
+    } 
+}
+@media(max-width: 350px){
+    .mcg{
+        display: flex;
+        flex-direction: column;
+       background-color: gray;
+       border-radius: 30px;
+       padding: 10px 5px 10px 20px;
+       width: 150px;
+       align-items: space-around;
+       color: white;
+       
+    }
+    
+    .mcp{
+    
+    background-color: purple;
+    border-radius: 30px;
+    padding: 10px 5px 10px 20px;
+    width: 150px;
+    color: white;
+    
+    }
+}
+
+

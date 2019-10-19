@@ -55,3 +55,32 @@
 .myprofile-editicon{
     height: 40px;
 }
+@media(max-width: 480px){
+    .profile-info{ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-info-img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+       
+    }
+    .profile-aboutme{
+        font-size: 12px;
+    }
+    .profile-services{
+        font-size: 12px;
+    }
+    .profile-organizations{
+        font-size: 12px;
+    }
+    .myprofile-title{
+        font-size: 16px;
+    }
+    .myprofile-editicon{
+        height: 20px;
+    }
+}
