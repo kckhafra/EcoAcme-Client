@@ -1,17 +1,28 @@
+.eachpost-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: rgb(165, 156, 156) solid 1px;
+    overflow: auto;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 10px;
+}
+
+
 .postuser-image{
-    height: 44px;
+    width: 44px;
 }
 .post-img{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
+   
+    width: 80%;
+    
     
 }
 .post-img-container{
     display: flex;
     justify-content: center;
-    width: 356px;
+    width: 100%;
 }
 .post-imgname-container{
     display: flex;
@@ -29,15 +40,7 @@
     font-size:12px;
     color:rgb(141, 6, 101);
 }
-.eachpost-container{
-    width: 100%;
-    
-    border: rgb(165, 156, 156) solid 1px;
-    overflow: auto;
-    margin-bottom: 5px;
-    background-color: white;
-    padding: 10px;
-}
+
 
 .line-seperator{
     background-color: lightgray;
@@ -64,7 +67,6 @@
 }
 .icon-box{
     display: flex;
-    font-size: 2rem;
     position: relative;
     bottom: 0px;
     
@@ -156,4 +158,41 @@
     z-index: 1;
     background-color: white;
     left: 30%
+}
+
+
+@media(min-width: 650px){
+
+    .post-img{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        
+        
+    }
+    .post-img-container{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .post-icon-button{
+        margin-left: 1px;
+        font-size: 7px;
+        padding-left: 0px;
+        
+    }
+    .icon-box{
+        justify-content: center;
+    }
+    
+}
+
+@media(min-width: 928px){
+    .post-icon-button{
+        font-size: 12px;
+        
+    }
+    .icon-box{
+        justify-content: initial;
+    }
 }

@@ -7,7 +7,7 @@
 }
 .user-middle-container{
     background-color: white;
-    padding: 0px 25px 0px 40px;
+    padding: 0px 30px 0px 30px;
 }
 .usermiddle-title{
     margin: 16px 0px 16px 0px;
@@ -17,13 +17,17 @@
     
     display: flex;
     flex-wrap: wrap;
+    /* flex-basis: 500px; */
+    flex-basis: 100%;
+    
     
 }
 .user-sidebar{
     background-color: white;
     border: lightgray 1px solid;
     width: 310px;
-    height: 280px;
+    height: 180px;
+    margin-right: 50px;
 }
 .userpage-friends{
     display: flex;
@@ -41,4 +45,33 @@
 .friend-number{
     display: flex;
     align-items: center;
+}
+
+@media(max-width: 650px){
+    .userpage-container{
+    
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .user-sidebar{
+        background-color: white;
+        border: lightgray 1px solid;
+        width: 100%;
+        height: initial;
+        margin: 0px;
+        
+    }
+    .user-middle{
+    
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-basis: 500px; */
+        flex-basis: 100%;
+        justify-content: center;
+        
+        
+    }
+    
 }

@@ -11,6 +11,7 @@ import UserBadge from '../UserBadge/UserBadge'
 import ImagesForComponents from '../ImagesForComponents/ImagesForComponents';
 import PostForm from '../Post/PostForm/PostForm'
 import FriendsService from '../../services/friends-api-service'
+import NewsApi from '../Home/NewsApi/NewsApi'
 const uuid = require('uuid')
 
 export default class Home extends React.Component{
@@ -77,18 +78,18 @@ export default class Home extends React.Component{
          })
     
         return(
-            <div>
+            
                 
                 <div className="home-main-container">
                     <div className="userinfo-container">
-                    {userInfo.map(profile=>{
-                    return (
-                    <UserBadge
-                    key={uuid}
-                    profile={profile}/>
-                    )
-                })}
-                </div>
+                        {userInfo.map(profile=>{
+                        return (
+                        <UserBadge
+                        key={uuid}
+                        profile={profile}/>
+                        )
+                        })}
+                    </div>
                     
                     <div  className={this.state.textbox}>
 
@@ -97,12 +98,20 @@ export default class Home extends React.Component{
                         handlePostForm={this.handlePostForm}
                         />
                     </div>
+                    <form onSubmit={this.handlePostForm}className="post-form">
+                        <div className="writepost-container">
+                            <input name="write_post" className="write-post" type="text" placeholder="Write a post"></input>
+                            <input name="images" className="write-post" type="text" placeholder="Post image url"></input>
+                            <button className="responsive-writepost-button" type="submit">Post</button>
+                            
+                        </div>
+                    </form>
                     <div className="postpage-container">
-                        
+                       
                         <div className="share-post" onClick={this.displayWritePost} >
                         <img className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
                         </div>
-                        <div className="line"></div>
+                        {/* <div className="line"></div> */}
                         
                         {this.context.postList.map(post=>{
                             return(
@@ -117,8 +126,12 @@ export default class Home extends React.Component{
                         })}
                     </div>
                     
+                    <div className="newsapi-container">
+                        <NewsApi/>
+                    </div>
+                    
                 </div>
-            </div>
+            
         )
     }
     

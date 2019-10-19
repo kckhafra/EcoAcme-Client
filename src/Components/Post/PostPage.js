@@ -90,7 +90,6 @@ export default class PostPage extends React.Component{
     
 
     render(){
-        console.log(this.props.posts)
         return(
             <div>
             <div className="eachpost-container">
@@ -108,7 +107,7 @@ export default class PostPage extends React.Component{
                         />
                     </div>
                 <div className="post-imgname-container">
-                    {this.props.posts.post_images!==null
+                    {this.props.posts.images!==null
                     ? 
                     <img className="postuser-image" src={this.props.posts.images}/>
                     : null}

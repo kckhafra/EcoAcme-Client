@@ -50,14 +50,10 @@ export default class Header extends React.Component{
                         </main>
                     </Menu>
                 </div>
-                <div className="logoimg-container">
-                    <h1>EcoAcme</h1>
+                <div className="title-container">
+                    <h1 className="ecoacme-title">EcoAcme</h1>
                 </div>
-                <div className="log-search-container">
-                    
-                    <input type="text" className="header-search"></input>
-                    <button className="header-search-button">Search</button>
-                </div>
+                
                 <div className="nav-container">
                     <Link 
                     to="/home"

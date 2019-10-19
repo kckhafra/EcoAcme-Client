@@ -153,6 +153,12 @@
 
   @media(min-width:520px){
     
+    .ecoacme-title{
+  
+      font-size: 24px;
+      margin: 0px,30px,0px 30px;
+    }
+    
     .log-search-container{
       display: flex;
   }
