@@ -1,5 +1,6 @@
 
 import React from 'react'
+import config from '../../../config'
 
 class NewsApi extends React.Component{
     state = {
@@ -7,7 +8,11 @@ class NewsApi extends React.Component{
         page: 1
     }
     componentDidMount(){
-        return fetch(`http://newsapi.org/v2/top-headlines?country=us&apikey=cfe55c2703cf45e19651e57063183cec&category=health&pageSize=100`)
+        return fetch(`https://newsapi.org/v2/top-headlines?country=us&category=health&pageSize=100`,{
+            headers: {
+                'authorization': `${config.API_KEY}`
+            },
+        })
         .then(res=>{
             if (res.ok){
                 return res.json();

@@ -4,6 +4,10 @@
     align-items: center;
 
 }
+.friends-link{
+    color: black;
+    text-decoration: none;
+}
 .friendpage-friendcontainer{
     display: flex;
     align-items: center;

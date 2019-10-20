@@ -4,14 +4,11 @@ import PostService from '../../services/post-api-service'
 import TokenService from '../../services/token-service'
 import JwtService from '../../services/jwt-service'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext';
-import DeleteCommentBox from '../DeleteCommentBox/DeleteCommentBox'
 import {Link} from 'react-router-dom'
 import ImagesForComponents from '../ImagesForComponents/ImagesForComponents'
 import Comment from '../Comment/Comment'
-import PostForm from '../Post/PostForm/PostForm'
 import EditPostForm from '../Post/EditPostForm/EditPostForm'
 import DeletePostConfirmation from './DeletePostConfirmation/DeletePostConfirmation'
-const uuid = require('uuid')
 export default class PostPage extends React.Component{
     static contextType = EcoAcmeContext
     
@@ -105,23 +102,23 @@ export default class PostPage extends React.Component{
                         posts={this.props.posts}
                         
                         />
-                    </div>
-                <div className="post-imgname-container">
-                    {this.props.posts.images!==null
-                    ? 
-                    <img className="postuser-image" src={this.props.posts.images}/>
-                    : null}
-                    <div className="name-profession-list">
-                        <div className="post-name">{this.props.posts.first_name}    <span>{this.props.posts.last_name}</span>
-                        </div>
-                        <div className="post-profession">
-                            {this.props.posts.profession}
-                        </div>    
-                        {/* <li>{this.props.posts.date_created}</li>    */}
-                    </div>
-                    
-                    
                 </div>
+                <Link className="post-imgname-link" to={`/users/${this.props.posts.user_id}`}>
+                    <div className="post-imgname-container">
+                        {this.props.posts.images!==null
+                        ? 
+                        <img className="postuser-image" src={this.props.posts.images}/>
+                        : null}
+                        <div className="name-profession-list">
+                            <div className="post-name">{this.props.posts.first_name}    <span>{this.props.posts.last_name}</span>
+                            </div>
+                            <div className="post-profession">
+                                {this.props.posts.profession}
+                            </div>    
+                            {/* <li>{this.props.posts.date_created}</li>    */}
+                        </div> 
+                    </div>
+                </Link>
                 <p>{this.props.posts.post}</p>
                 {this.props.posts.post_images==null
                     ? null

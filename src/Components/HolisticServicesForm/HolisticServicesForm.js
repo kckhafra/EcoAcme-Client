@@ -12,7 +12,6 @@ export default class HolisticServicesForm extends React.Component{
             const user_id = payload.user_id
             
             const servicesText = e.target.servicesText.value
-            console.log(servicesText)
             UserService.editServices(user_id,servicesText)
             this.props.closeServicesForm(e)
         }

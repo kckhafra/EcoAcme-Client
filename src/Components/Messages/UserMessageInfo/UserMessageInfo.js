@@ -14,11 +14,9 @@ export default class UserMessageInfo extends React.Component{
         const user_id = payload.user_id
         const findUser = this.context.userList.find(user => user.id === user_id)
         const user_name = findUser
-        console.log(findUser)
 
         const {allUserMessages} = this.props
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]
-       console.log(uniqueMessage)
        const messageWithoutLoggedIn = uniqueMessage.filter(mess=>mess.id!==user_id)
        
        

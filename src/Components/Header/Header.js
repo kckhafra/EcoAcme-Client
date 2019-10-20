@@ -32,7 +32,6 @@ export default class Header extends React.Component{
             this.props.onLoginSuccess()
         })
         .catch(error=>{
-            console.log(error)
             this.setState({
                 error: error.error
             })
@@ -55,13 +54,13 @@ export default class Header extends React.Component{
                             {/* <a id="notifications" className="menu-item" href="/notifications">Notifications</a> */}
                             <a id="myprofile" className="menu-item" href="/myprofile">My Profile</a>
                             
-                            <a id="logout"  className="menu-item" href="/">Logout</a>
+                            <a id="logout"  onClick={ this.handleLogoutButton } className="menu-item" href="/">Logout</a>
                             
                         </main>
                     </Menu>
                 </div>
                 <div className="title-container">
-                    <h1 className="ecoacme-title">EcoAcme</h1>
+                    <Link to="/home" className="header-ecoacme-link"><h1 className="ecoacme-title">EcoAcme</h1></Link>
                 </div>
                 
                 <div className="nav-container">
@@ -108,7 +107,7 @@ export default class Header extends React.Component{
                     </Menu>
                 </div>
                 <div className="title-container">
-                    <h1 className="ecoacme-title">EcoAcme</h1>
+                <Link className="header-ecoacme-link" to="/"><h1 className="ecoacme-title">EcoAcme</h1></Link>
                 </div>
                 <div className="blank-space"></div>
                 <div className="header-login-component">
@@ -120,7 +119,6 @@ export default class Header extends React.Component{
         )
     }
     render(){
-        console.log(this.state.error)
         return(
             <div>
                 

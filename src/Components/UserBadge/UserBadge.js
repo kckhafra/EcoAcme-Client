@@ -1,12 +1,14 @@
 import React from 'react';
 import './UserBadge.css'
+import {Link} from 'react-router-dom'
 
 export default class UserBadge extends React.Component{
     render(){
         return(
             <div className="eachprofile-item">
-                
-                <img className="profile-img" src={this.props.profile.images}/>
+                <Link className="userbadge-link" to={`/users/${this.props.profile.id}`}>
+                <img className="profile-img" src={this.props.profile.images} alt="logged in user"/>
+                </Link>
                 <div>{this.props.profile.first_name}{" "}<span>{this.props.profile.last_name}</span></div>
                 <div>{this.props.profile.email}</div>
                 <div>{this.props.profile.profession}</div>

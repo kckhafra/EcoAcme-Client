@@ -34,17 +34,12 @@ export default class UserPageList extends React.Component{
     }
     
     render(){
-        console.log(this.context.userList)
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         const friendsList =this.context.friendReceiverList.concat(this.context.friendRequestList)
         const users = this.context.userList.filter(user=>user.id!==user_id)
-        console.log(users)
-        
-        
-        
-        
+
         return(
             <div>
                 <Header/>

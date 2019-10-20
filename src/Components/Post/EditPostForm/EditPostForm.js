@@ -56,8 +56,6 @@ export default class EditPostForm extends React.Component{
     
     render(){
         const {post,post_images} = this.state
-        console.log(post_images)
-        console.log(post)
         return(
             <div className="edit-form-container">
                 <div className="edit-purple-bar"></div>

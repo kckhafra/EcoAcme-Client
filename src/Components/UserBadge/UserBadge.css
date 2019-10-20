@@ -1,7 +1,11 @@
 .profile-img{
     height: 70px;
-   margin-left: auto;
-   margin-right: auto;
+    
+   
+}
+.userbadge-link{
+    display: flex;
+    justify-content: center;
 }
 
 .eachprofile-item{

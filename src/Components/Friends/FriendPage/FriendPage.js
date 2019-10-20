@@ -2,6 +2,7 @@ import React from 'react';
 import './FriendPage.css'
 import FriendMessage from '../FriendMessage/FriendMessage'
 import MessagesService from '../../../services/messages-api-service';
+import {Link} from 'react-router-dom'
 
 export default class FriendPage extends React.Component{
     state={
@@ -33,6 +34,7 @@ export default class FriendPage extends React.Component{
                 </div>
                 <div className="friendpage-info">
                     <div className="friendpage-friendcontainer">
+                        <Link className="friends-link" to={`users/${this.props.friends.id}`}>
                         <img className="friendpage-img"src={this.props.friends.images}/>
                         <div className="friendname-profession-college">
                             <div className="friendpage-name">
@@ -48,6 +50,7 @@ export default class FriendPage extends React.Component{
                                 {`User Name: ${this.props.friends.user_name}`}
                             </div>
                         </div>
+                        </Link>
                     </div>
                     <div onClick={this.openNewMessage} className="friendpage-message">
                     Message

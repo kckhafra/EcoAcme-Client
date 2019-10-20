@@ -12,7 +12,6 @@ export default class AboutMeForm extends React.Component{
             const user_id = payload.user_id
             
             const aboutText = e.target.aboutText.value
-            console.log(aboutText)
             UserService.editAboutMe(user_id,aboutText)
             this.props.closeAboutForm(e)
         }

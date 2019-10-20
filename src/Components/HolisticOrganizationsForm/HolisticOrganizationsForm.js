@@ -13,7 +13,6 @@ export default class HolisticOrganizationForm extends React.Component{
             const user_id = payload.user_id
             
             const organizationText = e.target.organizationText.value
-            console.log(organizationText)
             UserService.editOrganization(user_id,organizationText)
             this.props.closeOrganizationsForm(e)
         }

@@ -37,7 +37,6 @@ export default class MessageListPage extends React.Component{
         
         MessageService.getAllUserMessages(user_id)
             .then(mess=>{
-                console.log(mess)
                 this.setState({allUserMessages: mess})
                 
                 return mess

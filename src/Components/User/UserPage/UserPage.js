@@ -21,7 +21,6 @@ export default class UserPage extends React.Component{
     }
     
     render(){
-        console.log(this.props.user)
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
