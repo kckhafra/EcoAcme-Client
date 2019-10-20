@@ -14,7 +14,7 @@ Front-end: The front end was built with JavaScript, React, HTML, CSS, AND API GE
 [Back-End](https://github.com/kckhafra/EcoAcme-API): The back-end was built with Node.js and PSQL. The login was authenticated through JSON Web Token(JWT). Database stored at Heroku. 
 
 ### Description
-EcoAcme currently allows you to create a profile; create, delete and edit post; create and delete comments, message other users and add friends.   
+EcoAcme currently allows you to create a profile; create, delete and edit post; create and delete comments; message other users and add friends.   
 
 ## Starter Page
 - The header at a certain width allows users to login. Once the header is the size of a ipad users are routed to a login page.   
@@ -23,17 +23,19 @@ EcoAcme currently allows you to create a profile; create, delete and edit post; 
 
 ## Home Page
 - The header allows users to move throughout the web app. The title, EcoAcme, is a link that takes you to the home page once you click on it.  
-- The homepage list all Post. Users are able to create, delete and edit post. Users can also create and delete comments. 
+- The homepage list all Post. Users are able to create, delete and edit post. Users can also create and delete comments.
+- At the far right of the Home Page are news articles. This news article come from News API, and the articles displayed are top headline health news.  
 ![Home Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.07.05%20PM.png)
 
-## Buy Product
-- Once you click a specific product on the home page you are routed to the Buy Product page. 
-- The buy product page currently does not allow a user to buy products; however, users can see more details about the product they are interested in. 
-![Buy Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.51.01%20AM.png)
+## Network
+- Once you click the Network link in the header you will be directed to the Network page. The network page is a list of all users that have made a profile on EcoAcme. On each users card is a connect button. If you click this button the user will show up on the page entitled friends. To get to friends you must click the friends link of the left hand side. 
+- If you click the users image or name you will be directed to that users profile page where you will be able to see more information about the user. 
+![Network](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.08.07%20PM.png)
 
-## Registration Page
--The registration page allows users to create login credentials, so the user can have access to posting and editing products they have for sell. 
-![Registration Page](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.49.13%20AM.png)
+## Friends Page
+- The friends page are a list of users you have added on the sight. If you click a friends name of picture you will be directed to their profile page. 
+- If you click message a message text box will pop out. You can write a message to your friend. After you click the submit button you will be directed to the message page.  
+![Friends Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.08.31%20PM.png)
 
 ## Login Page
 ![Login Page](https://github.com/kckhafra/holistic-shopping-client/blob/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.49.28%20AM.png)
