@@ -28,7 +28,7 @@ EcoAcme currently allows you to create a profile; create, delete and edit post; 
 ![Home Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.07.05%20PM.png)
 
 ## Network
-- Once you click the Network link in the header you will be directed to the Network page. The network page is a list of all users that have made a profile on EcoAcme. On each users card is a connect button. If you click this button the user will show up on the page entitled friends. To get to friends you must click the friends link of the left hand side. 
+- Once you click the Network link in the header you will be directed to the Network page. The network page is a list of all users that have made a profile on EcoAcme. On each users card is a connect button. If you click this button the user will show up on the page entitled friends. To get to friends you must click the friends link on the left hand side. 
 - You can seacrh user by first name, last name or user name. 
 - If you click the users image or name you will be directed to that users profile page where you will be able to see more information about the user. 
 ![Network](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.08.07%20PM.png)
