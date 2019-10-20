@@ -44,23 +44,11 @@ EcoAcme currently allows you to create a profile; create, delete and edit post; 
 - A user can also reply directly to the messages being displayed. At the bottom of the current message conversation that is displayed is a reply box. If you type a message in and hit send you will send a message to the user you are currently having a conversation with. 
 ![Message Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.08.52%20PM.png)
 
-## Sale Product Form
-- The sale product form allows users to enter product information that will be displayed on the homepage. Once you add a product you will be routed to your product page, where a list of your products will be displayed. 
-![Sale Product Form](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.09%20AM.png)
+## User Profile
+- The user profile page is where users provide information about themselves, how they contribute to the holistic health field and what orginizations they are afilliated with. 
+- To edit the about me filed, holistic services field and the holistic organization fiels a user has to simply click the write icon located in each of the corresponding boxes. 
+![User Profile Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.09.07%20PM.png)
 
-## Your Product List
-- Your product page list all the products you have added to your account. You can manage your products by clicking on a specific product. 
-- Users can also search their products using the search bar. Once users enter a search term, all products in your product repository that match the search term will be displayed on this page. 
-![Your Product List](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.18%20AM.png)
-
-## Manage Product
-- Manage product page allows users to edit or delete their product. 
-![Manage Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.25%20AM.png)
-
-
-## Edit Product Form
-- The edit product form pre-populates the form with your initial information you put in when addding the product. Users have the option of changing this information. 
-![Edit Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.32%20AM.png)
 
 
 
