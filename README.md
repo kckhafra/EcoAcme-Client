@@ -22,9 +22,9 @@ EcoAcme currently allows you to create a profile; create, delete and edit post; 
 ![Starter Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%202.19.44%20PM.png)
 
 ## Home Page
-- The header allows users to move throughout the web app. 
-- The homepage also list all products for sell. Users are not required to have login credentials to access products on the homepage. 
-![Home Page](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.48.57%20AM.png)
+- The header allows users to move throughout the web app. The title, EcoAcme, is a link that takes you to the home page once you click on it.  
+- The homepage list all Post. Users are able to create, delete and edit post. Users can also create and delete comments. 
+![Home Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.07.05%20PM.png)
 
 ## Buy Product
 - Once you click a specific product on the home page you are routed to the Buy Product page. 
