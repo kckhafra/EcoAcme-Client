@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EcoAcme
+EcoAcme is a social media platform that promotes holistic health. Users joining EcoAcme become a part of an online community that encourages healthy eating, strength and conditioning and mental stability. This social networking platform allows users to post events, make comments on post, directly message users, view others profiles and add friends.
 
-## Available Scripts
+### Demo
+[Live App](https://ecoacme-app.kckhafra.now.sh/)
 
-In the project directory, you can run:
+To try out the app you can create you own login credentials on the registration page or you can use the following demo login credentials. 
+- Username: kckhafra
+- Password: studyhard
 
-### `npm start`
+### Technologies used
+Front-end: The front end was built with JavaScript, React, HTML, CSS, AND API GET, POST, PATCH, DELETE REQUEST. API request was also used to get information from the News API. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Back-End](https://github.com/kckhafra/EcoAcme-API): The back-end was built with Node.js and PSQL. The login was authenticated through JSON Web Token(JWT). Database stored at Heroku. 
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Description
+EcoAcme currently allows you to create a profile; create, delete and edit post; create and delete comments, message other users and add friends.   
 
-### `npm test`
+## Starter Page
+- The header at a certain width allows users to login. Once the header is the size of a ipad users are routed to a login page.   
+- The starter page also allows you to sign up. If the user name is already taken an error message will display. If the password you create is not long enough an error message will also display. 
+![Starter Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%202.19.44%20PM.png)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Home Page
+- The header allows users to move throughout the web app. 
+- The homepage also list all products for sell. Users are not required to have login credentials to access products on the homepage. 
+![Home Page](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.48.57%20AM.png)
 
-### `npm run build`
+## Buy Product
+- Once you click a specific product on the home page you are routed to the Buy Product page. 
+- The buy product page currently does not allow a user to buy products; however, users can see more details about the product they are interested in. 
+![Buy Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.51.01%20AM.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Registration Page
+-The registration page allows users to create login credentials, so the user can have access to posting and editing products they have for sell. 
+![Registration Page](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.49.13%20AM.png)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Login Page
+![Login Page](https://github.com/kckhafra/holistic-shopping-client/blob/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.49.28%20AM.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sale Product Form
+- The sale product form allows users to enter product information that will be displayed on the homepage. Once you add a product you will be routed to your product page, where a list of your products will be displayed. 
+![Sale Product Form](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.09%20AM.png)
 
-### `npm run eject`
+## Your Product List
+- Your product page list all the products you have added to your account. You can manage your products by clicking on a specific product. 
+- Users can also search their products using the search bar. Once users enter a search term, all products in your product repository that match the search term will be displayed on this page. 
+![Your Product List](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.18%20AM.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Manage Product
+- Manage product page allows users to edit or delete their product. 
+![Manage Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.25%20AM.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Edit Product Form
+- The edit product form pre-populates the form with your initial information you put in when addding the product. Users have the option of changing this information. 
+![Edit Product](https://raw.githubusercontent.com/kckhafra/holistic-shopping-client/master/Pictures/Screen%20Shot%202019-09-26%20at%2011.50.32%20AM.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
