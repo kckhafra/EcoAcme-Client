@@ -46,7 +46,7 @@ EcoAcme currently allows you to create a profile; create, delete and edit post; 
 
 ## User Profile
 - The user profile page is where users provide information about themselves, how they contribute to the holistic health field and what orginizations they are afilliated with. 
-- To edit the about me filed, holistic services field and the holistic organization fiels a user has to simply click the write icon located in each of the corresponding boxes. 
+- To edit the about me field, holistic services field and the holistic organization field a user has to simply click the write icon located in each of the corresponding boxes. 
 ![User Profile Page](https://raw.githubusercontent.com/kckhafra/EcoAcme-Client/master/Pictures/Screen%20Shot%202019-10-20%20at%203.09.07%20PM.png)
 
 
