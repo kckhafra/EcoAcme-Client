@@ -2,7 +2,7 @@
 
 .edit-form-container{
     height: 100%;
-    border: 1px solid black;
+    border: 1px solid lightgray;
 }
 
  .edit-purple-bar{
@@ -14,7 +14,7 @@
     width: 100%;
 }
 .edit-home-writecomment{
-    height: 95%;
+    height: 200px;
     width: 100%
 }
 .edit-writecomment-form{

@@ -6,19 +6,22 @@ import {Link} from 'react-router-dom'
 
 export default class FriendPage extends React.Component{
     state={
-        friendMessage: "hidden"
+        friendMessage: "hidden",
+        friendpageInfo:"friendpage-info"
     }
     
     openNewMessage=(e)=>{
         e.preventDefault()
         this.setState({
-            friendMessage: "display-friendmessage"
+            friendMessage: "display-friendmessage",
+            friendpageInfo:"hidden"
         })
     }
     closeNewMessage=(e)=>{
         e.preventDefault()
         this.setState({
-            friendMessage: "hidden"
+            friendMessage: "hidden",
+            friendpageInfo:"friendpage-info"
         })
     }
     render(){
@@ -32,7 +35,7 @@ export default class FriendPage extends React.Component{
                     history={this.props.history}
                     />
                 </div>
-                <div className="friendpage-info">
+                <div className={this.state.friendpageInfo}>
                     <div className="friendpage-friendcontainer">
                         <Link className="friends-link" to={`users/${this.props.friends.id}`}>
                         <img className="friendpage-img"src={this.props.friends.images}/>

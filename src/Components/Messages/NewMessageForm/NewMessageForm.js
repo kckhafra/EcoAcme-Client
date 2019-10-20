@@ -9,7 +9,6 @@ export default class NewMessageForm extends React.Component{
                     <input className="message-username" name="receiver_username" type="text" placeholder="user name"></input>
                     <textarea className="message-text" placeholder="Send a messsage" name="message"></textarea>
                     <button className="message-button" onClick={this.props.handleCloseMessageForm}>Close</button>
-                    
                     <input type="submit"></input>
                 </form>
             </div>

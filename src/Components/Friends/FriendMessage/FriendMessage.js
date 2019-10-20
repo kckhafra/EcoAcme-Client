@@ -2,7 +2,7 @@ import React from 'react'
 import TokenService from '../../../services/token-service';
 import JwtService from '../../../services/jwt-service';
 import MessagesService from '../../../services/messages-api-service';
-import {Link} from 'react-router-dom'
+import './FriendMessage.css'
 
 export default class FriendMessage extends React.Component{
     
@@ -21,8 +21,10 @@ export default class FriendMessage extends React.Component{
                 
                 <form className="message-form"onSubmit={this.handleNewMessage}>
                     <textarea name="messages" className="message-text" placeholder="Send a message"></textarea>
-                    <button  type="Submit">Send</button>
-                    <button onClick={this.props.closeNewMessage}>Close</button>
+                    <div className="button-container">
+                        <button  type="Submit">Send</button>
+                        <button onClick={this.props.closeNewMessage}>Close</button>
+                    </div>
                 </form>
             </div>
         )

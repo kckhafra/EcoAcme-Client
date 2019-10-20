@@ -157,11 +157,9 @@
     display: none;
 }
 .editpost-form-container{
-    height: 250px;
-    position: absolute;
-    z-index: 1;
+    height: 100%;
     background-color: white;
-    left: 30%
+    
 }
 
 

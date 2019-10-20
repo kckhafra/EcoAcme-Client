@@ -15,7 +15,8 @@ export default class PostPage extends React.Component{
     state={
         commentBox:"hidden-commentbox",
         editTextBox: "hidden",
-        deletePostConf:"hidden"
+        deletePostConf:"hidden",
+        postUnderDeleteEditForm: ""
        
         
         
@@ -62,25 +63,29 @@ export default class PostPage extends React.Component{
     displayEditTextBox = ()=>{
        
         this.setState({
-            editTextBox: "editpost-form-container"
+            editTextBox: "editpost-form-container",
+            postUnderDeleteEditForm: "hidden"
         })
     }
     hideEditTextBox = (e)=>{
         e.preventDefault()
         this.setState({
-            editTextBox: "hidden"
+            editTextBox: "hidden",
+            postUnderDeleteEditForm: ""
         })
     }
     displayDeleteConfirmation = (e)=>{
         e.preventDefault()
         this.setState({
-            deletePostConf: "delete-confirmation-box"
+            deletePostConf: "delete-confirmation-box",
+            postUnderDeleteEditForm: "hidden"
         })
     }
     hideDeleteConfirmation = (e)=>{
         e.preventDefault()
         this.setState({
-            deletePostConf: "hidden"
+            deletePostConf: "hidden",
+            postUnderDeleteEditForm: ""
         })
     }
 
@@ -103,6 +108,7 @@ export default class PostPage extends React.Component{
                         
                         />
                 </div>
+                <div className={this.state.postUnderDeleteEditForm}>
                 <Link className="post-imgname-link" to={`/users/${this.props.posts.user_id}`}>
                     <div className="post-imgname-container">
                         {this.props.posts.images!==null
@@ -144,6 +150,7 @@ export default class PostPage extends React.Component{
                         <img className="comment-img" src={ImagesForComponents.editIcon}/>
                             Edit 
                     </button>
+                    </div>
                 </div>
                 <div className={this.state.commentBox}>
                     {/* {this.renderComment()} */}

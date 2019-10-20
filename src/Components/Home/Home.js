@@ -17,6 +17,7 @@ const uuid = require('uuid')
 export default class Home extends React.Component{
     state = {
         textbox: "hidden",
+        homePostpageContainer: ""
        
     }
     static contextType = EcoAcmeContext
@@ -42,11 +43,17 @@ export default class Home extends React.Component{
     
     displayWritePost = ()=>{
         
-        this.setState({textbox: 'display'})
+        this.setState({
+            textbox: 'display',
+            homePostpageContainer: 'hidden'
+        })
     }
     hideWritePost = ()=>{
        
-        this.setState({textbox: 'hidden'})
+        this.setState({
+            textbox: 'hidden',
+            homePostpageContainer: ''
+        })
     }
     handlePostForm = (e)=>{
         e.preventDefault()
@@ -69,7 +76,6 @@ export default class Home extends React.Component{
     
     
     renderHome(){
-        
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
@@ -91,13 +97,7 @@ export default class Home extends React.Component{
                         })}
                     </div>
                     
-                    <div  className={this.state.textbox}>
-
-                        <PostForm
-                        hideWritePost={this.hideWritePost}
-                        handlePostForm={this.handlePostForm}
-                        />
-                    </div>
+                    
                     <form onSubmit={this.handlePostForm}className="post-form">
                         <div className="writepost-container">
                             <input name="write_post" className="write-post" type="text" placeholder="Write a post"></input>
@@ -107,23 +107,31 @@ export default class Home extends React.Component{
                         </div>
                     </form>
                     <div className="postpage-container">
-                       
                         <div className="share-post" onClick={this.displayWritePost} >
                         <img className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
                         </div>
                         {/* <div className="line"></div> */}
-                        
-                        {this.context.postList.map(post=>{
-                            return(
-                                    <PostPage
-                                        key={uuid}
-                                        posts={post}
-                                        displayEditTextBox={this.displayEditTextBox}
-                        hideEditTextBox={this.hideEditTextBox}
-                                       
-                                    />
-                            )
-                        })}
+                        <div>
+                        <div  className={this.state.textbox}>
+                            <PostForm
+                            hideWritePost={this.hideWritePost}
+                            handlePostForm={this.handlePostForm}
+                            />
+                        </div>
+                        <div className={this.state.homePostpageContainer}>
+                            {this.context.postList.map(post=>{
+                                return(
+                                        <PostPage
+                                            key={uuid}
+                                            posts={post}
+                                            displayEditTextBox={this.displayEditTextBox}
+                                            hideEditTextBox={this.hideEditTextBox}
+                                        
+                                        />
+                                )
+                            })}
+                        </div>
+                        </div>
                     </div>
                     
                     <div className="newsapi-container">

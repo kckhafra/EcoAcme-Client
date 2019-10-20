@@ -107,7 +107,7 @@ export default class Header extends React.Component{
                     </Menu>
                 </div>
                 <div className="title-container">
-                <Link className="header-ecoacme-link" to="/"><h1 className="ecoacme-title">EcoAcme</h1></Link>
+                    <Link className="header-ecoacme-link" to="/"><h1 className="ecoacme-title">EcoAcme</h1></Link>
                 </div>
                 <div className="blank-space"></div>
                 <div className="header-login-component">

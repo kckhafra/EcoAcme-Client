@@ -52,13 +52,9 @@
 
 .display{
     background: white;
-    position: absolute;
-    z-index: 1;
     border: 1px solid black;
-    width: 41%;
+    width: 100%;
     height: 300px;
-    left: 352px;
-    
 }
 .share-post{
     width: 100%;
@@ -129,7 +125,7 @@
         text-decoration: underline;
     }
     .share-post-icon{
-        width: 30px;
+        height: 30px;
     }
     .postpage-container{
         width: 30%;
