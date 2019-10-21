@@ -43,11 +43,13 @@
 }
 .friend-image{
     height: 30px;
-    margin-right: 10px;
+    
 }
 .friendtext-andicon{
+    margin-right: 10px;
     display: flex;
     align-items: center;
+    margin-right: 30px;
 }
 .friend-number{
     display: flex;

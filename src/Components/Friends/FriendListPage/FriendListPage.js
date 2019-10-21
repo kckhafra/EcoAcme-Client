@@ -25,8 +25,9 @@ export default class FriendListPage extends React.Component{
     
     
     render(){
-        const friendsList = this.context.friendReceiverList.concat(this.context.friendRequestList)
-       
+        
+        const friends = this.context.friendReceiverList.concat(this.context.friendRequestList)
+        const friendsList = [...new Map(friends.map(item => [item['user_name'], item])).values()]
       
         
         return(
