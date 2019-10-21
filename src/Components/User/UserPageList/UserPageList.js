@@ -69,7 +69,11 @@ export default class UserPageList extends React.Component{
                         
                             {users.map(user=>{
                                 return(
-                                <UserPage key={uuid} user={user}/>
+                                <UserPage 
+                                key={uuid} 
+                                user={user}
+                                history={this.props.history}
+                                />
                                 )
                             })}
                         </div>

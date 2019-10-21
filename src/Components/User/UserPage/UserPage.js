@@ -18,6 +18,7 @@ export default class UserPage extends React.Component{
         const user_id = payload.user_id
         const receiver_id = this.props.user.id
         FriendsService.postFriend(user_id,receiver_id)
+        this.props.history.push('/friends')
     }
     
     render(){
