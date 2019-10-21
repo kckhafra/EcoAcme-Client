@@ -61,9 +61,11 @@ export default class Home extends React.Component{
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         const post=e.target.write_post.value
-        const images = e.target.images.value = ""||null
+        
+        const images = e.target.images.value === ""||e.target.images.value === " "
         ? null
         : e.target.images.value
+        console.log(e.target.images.value)
         this.hideWritePost()
         PostService.postPosts(user_id,post,images)
         .then(p=>{ 

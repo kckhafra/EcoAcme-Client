@@ -21,7 +21,7 @@ const PostService = {
         method: 'GET',
         headers: {
             'content-type': 'application/json',
-            'authorization': `bearer ${config.API_KEY}`
+            'authorization': `bearer ${TokenService.getAuthToken()}`
         },
     })
     .then((res)=>
