@@ -12,8 +12,8 @@ export default class UserMessageInfo extends React.Component{
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
-        const findUser = this.context.userList.find(user => user.id === user_id)
-        const user_name = findUser
+        
+        
 
         const {allUserMessages} = this.props
         const uniqueMessage = [...new Map(allUserMessages.map(item => [item['user_name'], item])).values()]
@@ -33,7 +33,7 @@ export default class UserMessageInfo extends React.Component{
                             <input name="user_name" value={user.user_name} className="hidden"/>
                             <input name="profession" value ={user.profession} className="hidden"/>
                             <button className="usermessage-submitbutton" type="submit">
-                            <img className="user-message-img" src={user.images}/>
+                            <img alt="loggen in user" className="user-message-img" src={user.images}/>
                                 {user.user_name}
                                 
                                 

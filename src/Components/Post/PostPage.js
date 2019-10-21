@@ -92,6 +92,7 @@ export default class PostPage extends React.Component{
     
 
     render(){
+       
         return(
             <div>
             <div className="eachpost-container">
@@ -113,7 +114,7 @@ export default class PostPage extends React.Component{
                     <div className="post-imgname-container">
                         {this.props.posts.images!==null
                         ? 
-                        <img className="postuser-image" src={this.props.posts.images}/>
+                        <img alt="profile headshot" className="postuser-image" src={this.props.posts.images}/>
                         : null}
                         <div className="name-profession-list">
                             <div className="post-name">{this.props.posts.first_name}    <span>{this.props.posts.last_name}</span>
@@ -126,11 +127,11 @@ export default class PostPage extends React.Component{
                     </div>
                 </Link>
                 <p>{this.props.posts.post}</p>
-                {this.props.posts.post_images==null
+                {this.props.posts.post_images===null
                     ? null
                     : 
                     <div className="post-img-container">
-                        <img className="post-img" src={this.props.posts.post_images}/>
+                        <img alt="uploaded to acommpany the post" className="post-img" src={this.props.posts.post_images}/>
                     </div>}
                 
                 
@@ -139,15 +140,15 @@ export default class PostPage extends React.Component{
 
                 <div className="icon-box">
                     <button className="post-icon-button comment-button" onClick={this.handleDisplayComment}>
-                            <img className="comment-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSKLVG85kNsVOBece-hU6N-kclGznpKCU1ns8a58I5j4a6sbx"/>
+                            <img alt="icon for comment" className="comment-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSKLVG85kNsVOBece-hU6N-kclGznpKCU1ns8a58I5j4a6sbx"/>
                             Comment
                     </button>
                     <button className="post-icon-button" onClick={this.displayDeleteConfirmation}>
-                        <img className="comment-img" src={ImagesForComponents.deleteIcon}/>
+                        <img alt="icon for delete" className="comment-img" src={ImagesForComponents.deleteIcon}/>
                             Delete 
                     </button>
                     <button onClick={this.displayEditTextBox} className="post-icon-button">
-                        <img className="comment-img" src={ImagesForComponents.editIcon}/>
+                        <img alt="icon for edit" className="comment-img" src={ImagesForComponents.editIcon}/>
                             Edit 
                     </button>
                     </div>

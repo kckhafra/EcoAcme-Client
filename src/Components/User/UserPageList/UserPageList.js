@@ -55,7 +55,7 @@ export default class UserPageList extends React.Component{
                             to="/friends">
                             <div className="userpage-friends">
                                 <p className="friendtext-andicon">
-                                    <img className="friend-image" src={Image.friendIcon}/>
+                                    <img alt="A friend of the logged in user" className="friend-image" src={Image.friendIcon}/>
                                     <div>Friends</div> 
                                 </p>  
                                 <p className="friend-number">{friendsList.length}</p>

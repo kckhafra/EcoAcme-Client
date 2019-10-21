@@ -59,7 +59,7 @@ export class EcoAcmeProvider extends React.Component{
        
         this.setState({postList: this.state.postList.filter(obj=>{
             return (
-            obj.id ==postId
+            obj.id ===postId
             ? !obj
             :obj)
           })})
@@ -68,7 +68,7 @@ export class EcoAcmeProvider extends React.Component{
         
         this.setState({commentList: this.state.commentList.filter(obj=>{
             return (
-            obj.id ==commentId
+            obj.id ===commentId
             ? !obj
             :obj)
           })})

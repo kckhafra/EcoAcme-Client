@@ -13,7 +13,7 @@ export default class Profile extends React.Component{
         const user_id = payload.user_id
         
          const profileUser = this.context.userList.filter(user=>{
-           return user.id == user_id
+           return user.id === user_id
          })
         
         return(
@@ -24,7 +24,7 @@ export default class Profile extends React.Component{
                     <div key={uuid}>
                         <p>{profile.first_name}</p>
                         <p>{profile.last_name}</p>
-                        <img src={profile.images}/>
+                        <img alt="loggen in user" src={profile.images}/>
                         <p>{profile.email}</p>
                         <p>{profile.profession}</p>
                         <p>{profile.profession_years}</p>

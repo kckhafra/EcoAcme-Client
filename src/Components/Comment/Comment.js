@@ -50,12 +50,12 @@ export default class Comment extends React.Component{
                     <button onClick={this.props.hideCommentBox}>Close</button>
                 </form>
                 {this.context.commentList.map(comm=>{
-                    return comm.post_id==this.props.posts.id
+                    return comm.post_id===this.props.posts.id
                     ? 
                     <div key={uuid}>
                         <div className="comm-container">
                             <div className={this.state.hideImgDelete}>
-                            <img className="comments-img comm-list"  src={comm.images}/>
+                            <img alt="loggen in user" className="comments-img comm-list"  src={comm.images}/>
                             </div>
                             <div className={this.state.hideCommenttext}>
                                 <div className="comm-info">

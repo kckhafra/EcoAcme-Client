@@ -82,7 +82,7 @@ export default class MyProfile extends React.Component{
                         <div className="graybar"></div>
                         <div className="profile-info-img">
                             
-                            <img className="myprofile-img" src={profile.images}/>
+                            <img alt="loggen in user" className="myprofile-img" src={profile.images}/>
                             <div className="profile-info">
                                 <div className="profile-name-email">
                                     <p className="profile-page-name">{profile.first_name}{" "}<span>{profile.last_name}</span></p>
@@ -108,7 +108,7 @@ export default class MyProfile extends React.Component{
                                         <p>{profile.about_me}</p>
                                     </div>
                                     <div onClick={this.displayAboutForm}>
-                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                        {<img alt="icon for edit text" className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ export default class MyProfile extends React.Component{
                                         <p>{profile.holistic_services}</p>
                                     </div>
                                     <div onClick={this.displayServicesForm}>
-                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                        {<img alt="icon for edit text" className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
                                     </div>
                                 </div>
                             
@@ -139,7 +139,7 @@ export default class MyProfile extends React.Component{
                                         <p>{profile.holistic_organizations}</p>
                                     </div>
                                     <div onClick={this.displayOrganizationsForm}>
-                                        {<img className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
+                                        {<img alt="icon for edit text" className="myprofile-editicon"src={ImagesForComponents.editIcon}/>}
                                     </div>
                                 </div>
                             

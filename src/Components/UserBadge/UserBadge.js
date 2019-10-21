@@ -7,7 +7,7 @@ export default class UserBadge extends React.Component{
         return(
             <div className="eachprofile-item">
                 <Link className="userbadge-link" to={`/users/${this.props.profile.id}`}>
-                <img className="profile-img" src={this.props.profile.images} alt="logged in user"/>
+                <img alt="loggen in user" className="profile-img" src={this.props.profile.images}/>
                 </Link>
                 <div>{this.props.profile.first_name}{" "}<span>{this.props.profile.last_name}</span></div>
                 <div>{this.props.profile.email}</div>

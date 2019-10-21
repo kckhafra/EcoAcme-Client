@@ -80,7 +80,7 @@ export default class Home extends React.Component{
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
         const userInfo = this.context.userList.filter(user=>{
-           return user.id == user_id
+           return user.id === user_id
          })
     
         return(
@@ -108,7 +108,7 @@ export default class Home extends React.Component{
                     </form>
                     <div className="postpage-container">
                         <div className="share-post" onClick={this.displayWritePost} >
-                        <img className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
+                        <img alt="icon for sharing a post" className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
                         </div>
                         {/* <div className="line"></div> */}
                         <div>

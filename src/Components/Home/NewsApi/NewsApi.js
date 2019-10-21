@@ -1,6 +1,7 @@
 
 import React from 'react'
 import config from '../../../config'
+const uuid = require('uuid')
 
 class NewsApi extends React.Component{
     state = {
@@ -92,10 +93,10 @@ class NewsApi extends React.Component{
                 <h2 className="news-api-title">Articles About Health</h2>
                 {this.state.news.articles&&this.state.news.articles.map(article=>{
                     return (
-                        < div className="each-article-container">
-                        <div><strong>Article Title: </strong>{article.title}}</div>
-                        <div><strong>Description: </strong>{article.description}</div>
-                        <a href={article.url} target="_blank">Link To Article</a>
+                        <div key={uuid} className="each-article-container">
+                            <div><strong>Article Title: </strong>{article.title}}</div>
+                            <div><strong>Description: </strong>{article.description}</div>
+                            <a href={article.url} target="_blank" rel="noopener noreferrer">Link To Article</a>
                         </div>
                         )
                 })}

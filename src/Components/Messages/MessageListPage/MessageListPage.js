@@ -10,7 +10,7 @@ import UserMessageInfo from '../UserMessageInfo/UserMessageInfo'
 import NewMessageForm from '../NewMessageForm/NewMessageForm'
 import ReplyMessage from '../ReplyMessage/ReplyMessageForm'
 import ImagesForComponents from '../../ImagesForComponents/ImagesForComponents'
-import UserService from '../../../services/users-api-service';
+
 
 
 const uuid = require('uuid')
