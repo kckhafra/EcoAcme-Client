@@ -7,7 +7,6 @@ import MessageListPage from '../Messages/MessageListPage/MessageListPage'
 import NotificationListPage from '../Notifications/NotificationsListPage/NotificationsListPage'
 import MyProfile from '../Profile/MyProfile/MyProfile'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext'
-import PostService from '../../services/post-api-service'
 import StarterPage from '../StarterPage/StarterPage'
 import NewMessageForm from '../Messages/NewMessageForm/NewMessageForm'
 import UserService from '../../services/users-api-service'
@@ -20,8 +19,6 @@ class App extends React.Component {
   static contextType = EcoAcmeContext
     
   componentDidMount(){
-    PostService.getAllPost()
-    .then(this.context.setPostList)
     UserService.getAllUsers()
         .then(this.context.setUserList)
 }

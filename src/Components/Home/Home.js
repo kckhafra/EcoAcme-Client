@@ -22,10 +22,11 @@ export default class Home extends React.Component{
     }
     static contextType = EcoAcmeContext
     componentDidMount(){
-        
         const token = TokenService.getAuthToken()
         const payload = JwtService.verifyJwt(token)
         const user_id = payload.user_id
+        PostService.getAllPost()
+        .then(this.context.setPostList)
         MessagesService.getAllUserMessages(user_id)
         .then(this.context.setAllUserMessages)
         // FriendsService.getAllFriends(user_id)
