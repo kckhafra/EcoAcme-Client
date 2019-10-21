@@ -6,7 +6,8 @@ import TokenService from '../../../services/token-service';
 
 export default class LoginPage extends React.Component{
     state={
-        error: ""
+        error: "",
+        
     }
     handleSubmitJwtAuth = (ev)=>{
         ev.preventDefault()
@@ -20,13 +21,18 @@ export default class LoginPage extends React.Component{
         .then(res => {
             TokenService.saveAuthToken(res.authToken)
             this.props.history.push('/home')
+            window.location.reload()
+            
         })
         .catch(error=>{
             this.setState({
                 error: error
             })
         })
+        
     }
+
+    
     render(){
         return(
             <section className="loginpage-login">
