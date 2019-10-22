@@ -3,8 +3,9 @@ import './AboutMeForm.css'
 import UserService from '../../services/users-api-service';
 import TokenService from '../../services/token-service';
 import JwtService from '../../services/jwt-service';
-
+import EcoAcmeContext from '../../contexts/EcoAcmeContext'
 export default class AboutMeForm extends React.Component{
+    static contextType = EcoAcmeContext
     handleAboutForm = (e)=>{ 
             e.preventDefault()
             const token = TokenService.getAuthToken()
@@ -13,6 +14,7 @@ export default class AboutMeForm extends React.Component{
             
             const aboutText = e.target.aboutText.value
             UserService.editAboutMe(user_id,aboutText)
+            .then(this.context.replaceUserList)
             this.props.closeAboutForm(e)
         }
         render(){

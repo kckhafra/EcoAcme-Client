@@ -3,9 +3,11 @@ import './HolisticOrganizationsForm.css'
 import UserService from '../../services/users-api-service';
 import TokenService from '../../services/token-service';
 import JwtService from '../../services/jwt-service';
+import EcoAcmeContext from '../../contexts/EcoAcmeContext'
 
 
 export default class HolisticOrganizationForm extends React.Component{
+    static contextType = EcoAcmeContext
     handleOrganizationForm = (e)=>{ 
             e.preventDefault()
             const token = TokenService.getAuthToken()
@@ -14,6 +16,7 @@ export default class HolisticOrganizationForm extends React.Component{
             
             const organizationText = e.target.organizationText.value
             UserService.editOrganization(user_id,organizationText)
+            .then(this.context.replaceUserList)
             this.props.closeOrganizationsForm(e)
         }
         render(){

@@ -3,8 +3,10 @@ import './HolisticServicesForm.css'
 import UserService from '../../services/users-api-service';
 import TokenService from '../../services/token-service';
 import JwtService from '../../services/jwt-service';
+import EcoAcmeContext from '../../contexts/EcoAcmeContext'
 
 export default class HolisticServicesForm extends React.Component{
+    static contextType = EcoAcmeContext
     handleServicesForm = (e)=>{ 
             e.preventDefault()
             const token = TokenService.getAuthToken()
@@ -13,6 +15,7 @@ export default class HolisticServicesForm extends React.Component{
             
             const servicesText = e.target.servicesText.value
             UserService.editServices(user_id,servicesText)
+            .then(this.context.replaceUserList)
             this.props.closeServicesForm(e)
         }
         render(){

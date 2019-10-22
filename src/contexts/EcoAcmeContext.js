@@ -20,7 +20,7 @@ const EcoAcmeContext = React.createContext({
     deleteComment: ()=>{},
     replacePostList: ()=>{},
     clearUserList: ()=>{},
-    // addMessageList: ()=>{}
+    replaceUserList: ()=>{}
 })
 export default EcoAcmeContext;
 
@@ -32,12 +32,22 @@ export class EcoAcmeProvider extends React.Component{
         userList: [],
         allUserMessages:[],
         commentList:[],
+        
 
 
     }
-    
+    replaceUserList = user=>{
+        const updateUser=this.state.userList.map(obj => {
+            return (
+                user.updateUser.id===obj.id
+                ? user.updateUser
+                :obj
+            )
+        });
+        this.setState({userList: updateUser})
+    }
+
     addPostList = addPost=>{
-        
         this.setState({postList: [addPost.post,...this.state.postList]})
     }
     replacePostList = post=>{
@@ -122,6 +132,7 @@ export class EcoAcmeProvider extends React.Component{
             deleteComment: this.deleteComment,
             replacePostList: this.replacePostList,
             clearUserList: this.clearUserList,
+            replaceUserList: this.replaceUserList,
         }
         return (
             <EcoAcmeContext.Provider value={value}>
