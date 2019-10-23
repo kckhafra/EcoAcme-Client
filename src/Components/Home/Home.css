@@ -9,7 +9,8 @@
 }
 
 .share-post{
-    display: none;
+    display: flex;
+    align-items: center;
     
 }
 .post-form{

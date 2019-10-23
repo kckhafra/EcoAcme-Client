@@ -112,7 +112,8 @@ export default class Home extends React.Component{
                     </form>
                     <div className="postpage-container">
                         <div className="share-post" onClick={this.displayWritePost} >
-                        <img alt="icon for sharing a post" className="share-post-icon" src={ImagesForComponents.editIcon}/> <span>Share a Post</span>
+                        <img alt="icon for sharing a post" className="share-post-icon" src={ImagesForComponents.editIcon}/> 
+                        <div>Share a Post</div>
                         </div>
                         {/* <div className="line"></div> */}
                         <div>
