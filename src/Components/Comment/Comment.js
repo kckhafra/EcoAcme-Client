@@ -68,7 +68,7 @@ export default class Comment extends React.Component{
                                     <p className="comm-list comm-comments">{comm.comments}</p>    
                                     </div>
                                     <div className="comm-date-container">
-                                    <div className="comm-date">{moment(this.props.posts.date_created).fromNow() }</div>
+                                    <div className="comm-date">{moment(comm.date_created).fromNow() }</div>
                                     </div>
                                 </div>  
                             </div>
