@@ -12,13 +12,17 @@
 
 .postuser-image{
     height: 60px;
+    margin-right: 10px;
 }
 .post-img{
-   
     height: 300px;
     
     
 }
+.post-date{
+    font-size: 10px;
+}
+
 .post-img-container{
     display: flex;
     justify-content: center;
@@ -129,24 +133,33 @@
     vertical-align: baseline;
     font-weight: 400;
     color: rgba(0,0,0,.9);
-    padding: 5px 16px 12px 12px;
+    padding: 5px 0px 12px 12px;
 }
-.comment-info{
+.comm-info{
     display: flex;
+    justify-content: space-between;
     
 }
+.comm-date{
+    font-size: 8px;
+    padding: 0px 0px 5px 10px;
+   
+}
+
 .comments-img{
     height: 50px;
     padding: 5px;
 }
 .comm-list{
     list-style-type: none;
+    font-size: 14px;
 }
 .comm-first-name{
     font-weight: 600;
+    
 }
 .comm-profession{
-    font-size: 12px;
+    font-size: 10px;
     color: rgb(141, 6, 101)
 }
 .comm-delete-button{
@@ -163,7 +176,7 @@
 }
 
 
-@media(min-width: 650px){
+@media(min-width: 720px){
 
     .post-img{
         display: flex;
@@ -188,6 +201,8 @@
     }
     
 }
+
+
 
 @media(min-width: 928px){
     .post-icon-button{

@@ -9,6 +9,8 @@ import ImagesForComponents from '../ImagesForComponents/ImagesForComponents'
 import Comment from '../Comment/Comment'
 import EditPostForm from '../Post/EditPostForm/EditPostForm'
 import DeletePostConfirmation from './DeletePostConfirmation/DeletePostConfirmation'
+import moment from 'moment';
+
 export default class PostPage extends React.Component{
     static contextType = EcoAcmeContext
     
@@ -92,7 +94,6 @@ export default class PostPage extends React.Component{
     
 
     render(){
-       
         return(
             <div>
             <div className="eachpost-container">
@@ -122,8 +123,10 @@ export default class PostPage extends React.Component{
                             <div className="post-profession">
                                 {this.props.posts.profession}
                             </div>    
-                            {/* <li>{this.props.posts.date_created}</li>    */}
+                            <div className="post-date">{moment(this.props.posts.date_created).fromNow() }</div>
+                              
                         </div> 
+                        
                     </div>
                 </Link>
                 <p>{this.props.posts.post}</p>

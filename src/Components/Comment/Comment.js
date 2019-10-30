@@ -1,6 +1,8 @@
 import React from 'react'
 import EcoAcmeContext from '../../contexts/EcoAcmeContext';
 import DeleteCommentBox from '../DeleteCommentBox/DeleteCommentBox'
+import moment from 'moment';
+
 const uuid = require('uuid')
 export default class Comment extends React.Component{
     state={
@@ -59,10 +61,15 @@ export default class Comment extends React.Component{
                             </div>
                             <div className={this.state.hideCommenttext}>
                                 <div className="comm-info">
+                                    <div>
                                     <li className="comm-list comm-first-name">{comm.first_name}{" "}<span className="comm-list comm-last-name">{comm.last_name}</span></li> 
                                     <li className="comm-list comm-profession">{comm.profession}</li>
                                             {/* <p>{comm.date_created}</p> */}
                                     <p className="comm-list comm-comments">{comm.comments}</p>    
+                                    </div>
+                                    <div className="comm-date-container">
+                                    <div className="comm-date">{moment(this.props.posts.date_created).fromNow() }</div>
+                                    </div>
                                 </div>  
                             </div>
                                 <div >
