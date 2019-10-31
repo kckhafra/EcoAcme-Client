@@ -62,8 +62,8 @@ export default class PostPage extends React.Component{
         .then(this.context.deletePost(this.props.posts.id))
     }
     
-    displayEditTextBox = ()=>{
-       
+    displayEditTextBox = (e)=>{
+       e.preventDefault()
         this.setState({
             editTextBox: "editpost-form-container",
             postUnderDeleteEditForm: "hidden"

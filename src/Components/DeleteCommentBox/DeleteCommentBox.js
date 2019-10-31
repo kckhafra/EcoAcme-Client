@@ -7,9 +7,10 @@ export default class DeleteComment extends React.Component{
     static contextType = EcoAcmeContext
     handleDeleteComment = (e)=>{
         e.preventDefault()
+        this.props.closeDeleteCommentConfirmation(e)
         PostService.deleteComment(this.props.comments.id)
         .then(this.context.deleteComment(this.props.comments.id))
-        this.props.closeDeleteCommentConfirmation()
+        
         
     }
     render(){
