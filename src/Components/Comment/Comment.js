@@ -41,6 +41,8 @@ export default class Comment extends React.Component{
         })
     }
     render(){
+        const filterComments = this.context.commentList&&this.context.commentList.filter(comment=>comment.post_id===this.props.posts.id)
+        console.log(filterComments)
         return(
             <div >
                 <form 
@@ -53,10 +55,9 @@ export default class Comment extends React.Component{
                     <button type="submit">Post</button>
                     <button onClick={this.props.hideCommentBox}>Close</button>
                 </form>
-                {this.context.commentList.map(comm=>{
-                    return comm.post_id===this.props.posts.id
-                    ? 
-                    <div key={uuid}>
+                {filterComments.map(comm=>{
+                    
+                    return <div key={uuid}>
                         <div className="comm-container">
                             <div className={this.state.hideImgDelete}>
                             <img alt="loggen in user" className="comments-img comm-list"  src={comm.images}/>
@@ -87,7 +88,6 @@ export default class Comment extends React.Component{
                             </button> 
                         </div>
                     </div>
-                    : null
                 })}
             </div>
         )
