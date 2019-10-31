@@ -9,6 +9,7 @@ export default class DeleteComment extends React.Component{
         PostService.deleteComment(this.props.comments.id)
         .then(this.context.deleteComment(this.props.comments.id))
         this.props.closeDeleteCommentConfirmation()
+        
     }
     render(){
     
@@ -22,8 +23,5 @@ export default class DeleteComment extends React.Component{
             </div>
             : null
        )
-        // return(
-            
-        // )
     }
 }
