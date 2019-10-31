@@ -32,6 +32,7 @@ export default class Comment extends React.Component{
     }
 
     closeDeleteCommentConfirmation = (e) => {
+        e.preventDefault()
         this.setState({
             deleteCommentBox:"hidden-deletecomment",
             hideCommenttext: "display-commenttext",
