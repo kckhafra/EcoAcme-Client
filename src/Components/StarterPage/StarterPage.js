@@ -50,9 +50,9 @@ export default class StarterPage extends React.Component{
             
             <div className="start-info">
                 <h2>Welcome to your holistic lifestyle.</h2>
-                <p>Follow other peoples workout regiments</p>
+                <p>Follow other people's workout regiments</p>
                 <p>Share holistic remedies</p>
-                <p>share health blogs</p>
+                <p>Share health blogs</p>
             </div>
             
             <div className="signup">
